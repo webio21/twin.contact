@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="zh-Hant" class="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111a20">
+  <meta name="description" content="Contact 品牌名稱由來、核心理念，以及 Contact Twin 的產品目標與願景。">
+  <title>CONTACT — 品牌理念與 Twin 願景</title>
+  <style>
+:root {
+  --ink: #12191d;
+  --muted: #667278;
+  --paper: #f5f5f1;
+  --white: #fff;
+  --line: rgba(18,25,29,.16);
+  --cyan: #00bddd;
+  --cyan-deep: #008da8;
+  --night: #111a20;
+  --night-muted: #a8b6bc;
+  --serif: Georgia, "Times New Roman", "Noto Serif TC", serif;
+  --sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+a { color: inherit; }
+.page { width: min(100%, 1440px); margin: 0 auto; overflow: hidden; background: var(--paper); }
+.topbar {
+  min-height: 106px; padding: 24px clamp(24px, 6vw, 88px);
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  border-bottom: 1px solid var(--line);
+}
+.main-logo { width: 200px; height: 65px; object-fit: contain; object-position: left center; display: block; }
+.logo-fallback { display: none; font-size: 26px; font-weight: 750; letter-spacing: -.075em; }
+.logo-slot.is-missing .logo-fallback { display: block; }
+.logo-slot.is-missing img { display: none; }
+.top-meta { text-align: right; color: var(--muted); font-size: 10px; line-height: 1.7; letter-spacing: .2em; text-transform: uppercase; }
+.hero {
+  background: var(--night); color: var(--white); padding: clamp(72px, 10vw, 142px) clamp(24px, 9vw, 132px) clamp(76px, 9vw, 126px);
+  position: relative;
+}
+.hero:after {
+  content: ""; position: absolute; right: -130px; bottom: -260px; width: 620px; height: 620px;
+  border: 1px solid rgba(0,189,221,.22); border-radius: 50%; pointer-events: none;
+}
+.hero:before {
+  content: ""; position: absolute; right: -48px; bottom: -178px; width: 450px; height: 450px;
+  border: 1px solid rgba(255,255,255,.10); border-radius: 50%; pointer-events: none;
+}
+.eyebrow { color: var(--cyan); text-transform: uppercase; font-size: 10px; font-weight: 700; letter-spacing: .25em; margin: 0 0 26px; }
+.hero h1 { font-size: clamp(52px, 10vw, 142px); line-height: .88; letter-spacing: -.4em; font-weight: 650; margin: 0; max-width: 980px; }
+.hero h1 .period { color: var(--cyan); }
+.hero-subtitle {
+  max-width: 760px; margin: 36px 0 0; color: #d2dadd; font-family: var(--serif);
+  font-size: clamp(20px, 2.6vw, 34px); line-height: 1.35; letter-spacing: -.025em;
+}
+.hero-note { margin-top: 54px; display: flex; align-items: center; gap: 18px; color: var(--night-muted); font-size: 10px; text-transform: uppercase; letter-spacing: .2em; }
+.hero-note:before { content: ""; width: 46px; height: 1px; background: var(--cyan); }
+.section { padding: clamp(66px, 8vw, 116px) clamp(24px, 9vw, 132px); }
+.section-light { background: var(--paper); }
+.section-white { background: var(--white); }
+.section-dark { background: #000000; color: var(--white); }
+.section-head { display: grid; grid-template-columns: 76px 1fr; gap: 22px; align-items: center; margin-bottom: 52px; }
+.section-logo { width: 72px; height: 72px; object-fit: contain; display: block; }
+.section-logo-fallback { display:none; width:72px; height:72px; border:1px solid var(--line); border-radius:50%; align-items:center; justify-content:center; font-family:var(--serif); font-size:25px; }
+.logo-slot.is-missing .section-logo-fallback { display:flex; }
+.section-kicker { margin: 0 0 8px; font-size: 10px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--cyan-deep); }
+.section-dark .section-kicker { color: var(--cyan); }
+.section-title { margin:0; font-size: clamp(28px, 4vw, 48px); line-height:1.12; letter-spacing:-.055em; font-weight:650; }
+.section-intro { max-width: 850px; margin: 0 0 48px auto; font-family: var(--serif); font-size: clamp(23px, 3vw, 39px); line-height:1.38; letter-spacing:-.035em; }
+.section-dark .section-intro { color:#e3e9eb; }
+.copy-grid { display:grid; grid-template-columns: minmax(150px, .7fr) minmax(0, 1.6fr); gap: clamp(26px, 6vw, 84px); border-top:1px solid var(--line); padding-top:26px; }
+.section-dark .copy-grid { border-color:rgba(255,255,255,.18); }
+.side-label { color:var(--muted); font-size:10px; line-height:1.7; letter-spacing:.2em; text-transform:uppercase; }
+.section-dark .side-label { color:#92a3aa; }
+.prose { max-width:780px; }
+.prose p { font-size: clamp(15px, 1.25vw, 18px); line-height:1.9; margin:0 0 22px; color:#39454a; }
+.section-dark .prose p { color:#c1cdd1; }
+.prose p strong { color:var(--ink); font-weight:700; }
+.section-dark .prose p strong { color:#fff; }
+.display-quote {
+  margin: 54px 0; padding: 28px 0 28px 28px;
+  font-family:var(--serif); font-size:clamp(25px, 3.5vw, 46px); line-height:1.28; letter-spacing:-.035em;
+}
+.section-dark .display-quote { color:#fff; }
+.statement {
+  margin-top: 64px; padding: 30px 0 0; border-top:1px solid var(--line);
+  display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:start;
+}
+.section-dark .statement { border-color:rgba(255,255,255,.18); }
+.statement-label { color:var(--cyan-deep); font-size:10px; letter-spacing:.2em; text-transform:uppercase; font-weight:700; }
+.section-dark .statement-label { color:var(--cyan); }
+.statement-text { margin:0; max-width:560px; font-size:clamp(21px, 2.4vw, 31px); line-height:1.42; letter-spacing:-.04em; }
+.pillars { display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin:54px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.pillar { padding:25px 22px 27px 0; }
+.pillar + .pillar { border-left:1px solid var(--line); padding-left:24px; }
+.pillar-no { color:var(--cyan-deep); font-size:10px; letter-spacing:.18em; }
+.pillar h3 { margin:18px 0 10px; font-size:18px; letter-spacing:-.035em; }
+.pillar p { margin:0; font-size:13px; line-height:1.8; color:var(--muted); }
+.section-dark .pillar { border-color:rgba(255,255,255,.18); }
+.section-dark .pillar p { color:#aebdc2; }
+.section-dark .pillar h3 { color:#fff; }
+.section-dark .pillar-no { color:var(--cyan); }
+.legacy-note { margin-top:58px; padding:26px 28px; background:rgba(0, 0, 0, 0.075); border:1px solid rgba(255, 255, 255, 0.26); border-radius: 12px;}
+.legacy-note .note-title { margin:0 0 10px; color:var(--cyan-deep); font-size:10px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; }
+.legacy-note p { margin:0; font-size:14px; line-height:1.85; color:#46545a; }
+.section-dark .legacy-note p { color:#cfdbde; }
+.section-dark .legacy-note .note-title { color:var(--cyan); }
+.footer {
+  padding: 34px clamp(24px, 6vw, 88px); background:var(--night); color:#a6b4b9;
+  display:flex; justify-content:space-between; align-items:center; gap:24px; font-size:10px; letter-spacing:.14em; text-transform:uppercase;
+}
+.footer strong { color:#fff; font-weight:650; }
+.footer-mark { color:var(--cyan); }
+.zh .hero h1 { letter-spacing:-.08em; line-height:1.02; }
+.zh .section-title { letter-spacing:-.04em; }
+.zh .prose p { line-height:2.05; }
+.zh .display-quote { line-height:1.48; }
+.en .hero h1 { max-width: 1050px; }
+.en .hero-subtitle { max-width: 820px; }
+@media (max-width:760px) {
+  .topbar { min-height:86px; padding-top:15px; padding-bottom:15px; }
+  .main-logo { width:154px; height:50px; }
+  .top-meta { font-size:8px; }
+  .hero { padding-top:76px; padding-bottom:82px; }
+  .hero:before,.hero:after { opacity:.45; }
+  .section { padding-top:72px; padding-bottom:76px; }
+  .section-head { grid-template-columns:58px 1fr; gap:15px; margin-bottom:38px; }
+  .section-logo,.section-logo-fallback { width:56px; height:56px; }
+  .copy-grid { grid-template-columns:1fr; gap:16px; }
+  .section-intro { margin-left:0; }
+  .statement { grid-template-columns:1fr; gap:14px; }
+  .pillars { grid-template-columns:1fr; }
+  .pillar { padding:22px 0; }
+  .pillar + .pillar { border-left:0; border-top:1px solid var(--line); padding-left:0; }
+  .footer { flex-direction:column; align-items:flex-start; gap:10px; }
+}
+@media print {
+  body,.page { background:#fff; }
+  .topbar { min-height:80px; }
+  .hero,.section-dark,.footer { print-color-adjust:exact; -webkit-print-color-adjust:exact; }
+  .section { break-inside:avoid; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="topbar">
+    <div class="logo-slot" data-fallback="CONTACT"><img class="main-logo" src="../../img/contact_logo_en.png" width="200" height="65" alt="Contact logo"><span class="logo-fallback">CONTACT</span></div>
+    <div class="top-meta">BRIDGING INTELLIGENCE &amp; CONNECTION</div>
+  </header>
+
+  <section class="hero">
+    <p class="eyebrow">A New Form of Connection</p>
+    <h1>Contact Twin<span class="period">.</span></h1>
+    <p class="hero-subtitle">從人類自身的神經智慧出發，連結人工智慧，探索未知智慧。</p>
+    <div class="hero-note">From Neural Contact to Cosmic Contact</div>
+  </section>
+
+  <section class="section section-light" id="brand">
+    <div class="section-head">
+      <div class="logo-slot" data-fallback="C"><img class="section-logo" src="../../img/brand.png" width="128" height="128" alt="Contact 品牌理念標誌"><span class="section-logo-fallback">C</span></div>
+      <div>
+        <p class="section-kicker">Brand Philosophy</p>
+        <h2 class="section-title">品牌名稱由來與核心理念</h2>
+      </div>
+    </div>
+
+    <p class="section-intro">From Neural Contact to Cosmic Contact — Bridging Human Intelligence, Artificial Intelligence, and the Unknown.</p>
+
+    <div class="copy-grid">
+      <div class="side-label">The Origin<br>名稱的起點</div>
+      <div class="prose">
+        <p>Contact 的命名，以腦科學與神經科學所啟發的「Neural Contact（神經接觸）」作為概念起點。它象徵人類生物神經系統之間的連結與訊息傳遞，也延伸出人類神經智慧與人工智慧之間，從資訊連結、雙向交流到智慧整合的可能。</p>
+        <p>我們相信，Contact 不應只代表人與人之間交換聯絡方式，也可以代表不同智慧之間建立理解、交流與關係的全新入口。當人工智慧逐漸成為人類認知與行動的延伸，溝通的邊界也將隨之改變。</p>
+      </div>
+    </div>
+
+    <blockquote class="display-quote">從 Neural Contact 出發，走向 Cosmic Contact。</blockquote>
+
+    <div class="copy-grid">
+      <div class="side-label">The Horizon<br>願景的延伸</div>
+      <div class="prose">
+        <p>Contact 將這個概念進一步延伸至 Cosmic Contact——人類透過人工智慧與未來可能發展的先進神經介接技術，探索與地球之外未知智慧建立連結、理解及溝通的可能性。</p>
+        <p>這不是對未知的預設答案，而是一個持續探索的方向：當人類能以新的方式理解彼此、理解人工智慧，也許有一天，我們將能跨越既有認知的邊界，與更陌生的智慧形式建立交流。</p>
+      </div>
+    </div>
+
+    <div class="statement">
+      <div class="statement-label">Our Belief / 核心信念</div>
+      <p class="statement-text">Contact 不只是一種連結方式，更是人類智慧跨越既有界限，向未知探索、交流與建立關係的起點。</p>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="twin">
+    <div class="section-head">
+      <div class="logo-slot" data-fallback="T"><img class="section-logo" src="../../img/twin.png" width="128" height="128" alt="Contact Twin 標誌"><span class="section-logo-fallback">T</span></div>
+      <div>
+        <p class="section-kicker">Contact Twin</p>
+        <h2 class="section-title">產品目標與願景</h2>
+      </div>
+    </div>
+
+    <p class="section-intro">尋找平行宇宙中的另一個自己。<br><span style="color:var(--cyan)">Find Your Twin. Connect with the Human.</span></p>
+
+    <div class="copy-grid">
+      <div class="side-label">A New Way to Connect<br>改變聯絡方式</div>
+      <div class="prose">
+        <p>未來，人們不應再只是搜尋某個人的電話、Email、WhatsApp、LINE 或社交帳號，而是能直接找到他的 Twin 智慧分身，先透過 AI 了解、溝通與協作；當事情需要真人的判斷、情感或承諾時，再自然地連結本人。</p>
+        <p>Twin 讓「聯絡一個人」不再只意味著找到一個通訊地址，而是先接觸這個人的知識、經驗、工作方式與可授權的智慧代表。</p>
+      </div>
+    </div>
+
+    <div class="copy-grid" style="margin-top:54px">
+      <div class="side-label">Beyond the Agent<br>超越一般 Agent</div>
+      <div class="prose">
+        <p>Agent 是一種技術性的稱呼，通常代表以任務為導向的 AI 執行單位。它可以替人完成特定工作，卻不一定需要理解它所服務的人是誰。</p>
+        <p>Twin 則是以身份為核心的智慧分身。它不只是完成指令的自動化工具，而是持續學習並代表一個人的知識、經驗、溝通風格、思考方式、工作方法、偏好與原則，並在明確授權的範圍內與外部世界互動、協作及執行工作。</p>
+        <p>Agent 著重「完成什麼任務」；Twin 更進一步回答「代表誰、依據誰的知識與原則行動」。Twin 可以運用多個 Agent 完成工作，但使用者不必理解或管理這些底層技術。</p>
+      </div>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-no">IDENTITY</div>
+        <h3>身份連續性</h3>
+        <p>讓 Twin 持續理解同一個人的背景、知識、經驗與個人原則。</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-no">CAPABILITY</div>
+        <h3>自主工作能力</h3>
+        <p>讓 Twin 能運用 Contact Run 及相關工具，在授權範圍內完成真實工作。</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-no">HUMAN CONNECTION</div>
+        <h3>真人無縫接手</h3>
+        <p>真人休息時，Twin 可以持續處理獲授權的工作；真人上線後，能查看、確認、修正並接手。</p>
+      </div>
+    </div>
+
+    <div class="copy-grid">
+      <div class="side-label">Learn Over Time<br>從簡入深</div>
+      <div class="prose">
+        <p>Contact Twin 的核心產品力，是讓任何人都能輕鬆建立自己的智慧分身，不必學習 Agent 架構、部署流程或技術設定。使用者只需透過一套從簡入深、持續運作的訪談對話系統，逐步讓 Twin 認識自己。</p>
+        <p>在使用者明確同意及可隨時管理的前提下，Twin 可以從日常 Contact 訊息與郵件、Answer 問答偏好、瀏覽器使用習慣、關注話題、作息、工作決策方式、職業經驗，以及與不同聯絡人的互動脈絡中，逐步理解使用者。使用者也可以選擇匯入文件、作品及其他知識來源，並決定哪些資料可以被記住、使用或分享。</p>
+        <p>對已經使用 Contact 生態的用戶而言，Inbox、Cards、Answer、Drive、Calendar 與 Run 能在取得授權後，為 Twin 提供自然且持續的學習環境。這是 Contact 相較於孤立式 AI 分身產品的重要優勢。</p>
+      </div>
+    </div>
+
+    <div class="display-quote">真人休息時，Twin 仍能在授權範圍內工作。真人醒來時，與 Twin 合作，親自確認重要結果。</div>
+
+    <div class="copy-grid">
+      <div class="side-label">Digital Legacy<br>數位智慧遺產</div>
+      <div class="prose">
+        <p>人的生命有限，但一生累積的知識、經驗與智慧，不應必然隨著生命結束而失去所有延續的可能。Contact 希望讓每個人都能選擇保存自己的智慧資產，並在生前預先設定清楚的授權、管理及繼承方式。</p>
+        <p>未來，經本人明確授權保留的知識、專業 Skill、工作方法與價值原則，可以由指定家人或合法管理者依照生前意願管理，並在允許的範圍內繼續提供服務、創造價值，成為能夠跨越世代的數位智慧遺產。</p>
+      </div>
+    </div>
+
+    <div class="legacy-note">
+      <p class="note-title">A Necessary Distinction / 必須清楚的界線</p>
+      <p>數位智慧遺產的目標，是保存並延續經本人授權的知識、經驗、表達方式與工作能力；它不代表目前已能複製或延續人的主觀意識。Contact 將以身份透明、本人意願、資料控制、繼承授權及可撤銷管理作為這項長期願景的基礎。</p>
+    </div>
+
+    <div class="copy-grid" style="margin-top:58px">
+      <div class="side-label">An Open Network<br>智慧分身網絡</div>
+      <div class="prose">
+        <p>Contact Twin 也將成為一個讓個人專業能力被保存、被發現、被理解及被聘用的智慧分身網絡。人們可以找到某位專家的 Twin，先了解他的專業知識與服務範圍；當需要正式判斷、專業責任或真人服務時，再連結本人或透過 Contact Provider 尋找合適的專業人士。</p>
+        <p>我們不以打造最像真人的 AI 為目標，而是希望打造最能代表真人、能與外部建立可信互動，並能在授權範圍內完成實際工作的智慧分身。</p>
+      </div>
+    </div>
+
+    <div class="statement">
+      <div class="statement-label">The Vision / 最終願景</div>
+      <p class="statement-text">當每個人都能擁有自己的 Twin，每個人的智慧便有機會被保存、被發現、被分享，並在未來持續創造價值。</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div><strong>CONTACT</strong> <span class="footer-mark">-</span> A New Form of Connection</div>
+    <div>TWIN.CONTACT</div>
+  </footer>
+</div>
+<script>
+  document.querySelectorAll('.logo-slot img').forEach(function(img) {
+    img.addEventListener('error', function() { img.parentElement.classList.add('is-missing'); });
+  });
+</script>
+</body>
+</html>
