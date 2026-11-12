@@ -189,12 +189,49 @@ a { color: inherit; }
   letter-spacing: -.035em;
 }
 
+
+.scope-title {
+  margin: 0 0 24px;
+  color: #fff;
+  font-family: var(--serif);
+  font-size: clamp(28px, 3.8vw, 44px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -.04em;
+}
+.scope-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  margin: 30px 0;
+}
+.scope-option {
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,.24);
+}
+.scope-option h4 {
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -.02em;
+}
+.scope-option p {
+  margin: 0;
+  color: #c1cdd1;
+  font-size: 15px;
+  line-height: 1.85;
+}
+@media (max-width:760px) {
+  .scope-options { grid-template-columns: 1fr; gap: 22px; }
+}
+
 </style>
 </head>
 <body>
 <div class="page">
   <header class="topbar">
-    <div class="logo-slot" data-fallback="CONTACT"><img class="main-logo" src="../../img/contact_logo_en.png" width="200" height="65" alt="Contact logo"><span class="logo-fallback">CONTACT</span></div>
+    <div class="logo-slot" data-fallback="CONTACT"><img class="main-logo" src="../../img/contact_logo_en.png" width="200" height="65" alt="Contact logo"></div>
     <div class="top-meta">BRIDGING INTELLIGENCE &amp; CONNECTION</div>
   </header>
 
@@ -207,7 +244,7 @@ a { color: inherit; }
 
   <section class="section section-light" id="brand">
     <div class="section-head">
-      <div class="logo-slot" data-fallback="C"><img class="section-logo" src="../../img/brand.png" width="128" height="128" alt="Contact 品牌理念標誌"><span class="section-logo-fallback">C</span></div>
+      <div class="logo-slot" data-fallback="C"><img class="section-logo" src="../../img/brand.png" width="128" height="128" alt="Contact 品牌理念標誌"></div>
       <div>
         <p class="section-kicker">Brand Philosophy</p>
         <h2 class="section-title">品牌名稱由來與核心理念</h2>
@@ -242,7 +279,7 @@ a { color: inherit; }
 
   <section class="section section-dark" id="twin">
     <div class="section-head">
-      <div class="logo-slot" data-fallback="T"><img class="section-logo" src="../../img/twin.png" width="128" height="128" alt="Contact Twin 標誌"><span class="section-logo-fallback">T</span></div>
+      <div class="logo-slot" data-fallback="T"><img class="section-logo" src="../../img/twin.png" width="128" height="128" alt="Contact Twin 標誌"></div>
       <div>
         <p class="section-kicker">Contact Twin</p>
         <h2 class="section-title">產品目標與願景</h2>
@@ -275,7 +312,7 @@ a { color: inherit; }
       <div class="side-label">Twin &amp; Agent<br>兩種不同的智慧</div>
       <div class="prose">
         <p>Agent 是一種技術性的表達，本質上是執行任務的 AI 工具。它通常依照明確指令與限定目標完成特定工作，像一個分工清楚的機器：任務範圍越明確，行為越容易預期，使用者的初始信任成本也相對較低；但當任務跨越情境、遇到例外或需要判斷時，往往仍需要人類持續提供指示、補充背景並監督結果。</p>
-        <p>Twin 則以理解與映照一個人的整體智慧為終極目標。它追求的不只是模仿聲音、語氣或外在表現，而是逐步理解一個人的記憶、知識、經驗、思考方式、價值觀、人格特質、情感脈絡，以及看待世界和與他人建立關係的方式。Twin 以個體整體智慧為根基，成為能代表本人與外部世界溝通、協作並在授權範圍內行動的智慧分身。</p>
+        <p>Twin 的核心目標，是理解並映照一個人的智慧；範圍可以從特定場景開始，也能在本人授權下逐步延伸至更全面的整體理解。它追求的不只是模仿聲音、語氣或外在表現，而是逐步理解一個人的記憶、知識、經驗、思考方式、價值觀、人格特質、情感脈絡，以及看待世界和與他人建立關係的方式。無論範圍大小，Twin 都以本人授權的知識與經驗為根基，成為能在設定範圍內代表本人與外部世界溝通、協作並採取行動的智慧分身。</p>
         <p>Agent 著重「如何完成一項任務」；Twin 著重「這個人是誰，以及他會如何理解、回應與行動」。Twin 可以運用 Agent 作為執行工具，但 Agent 並不等於 Twin。Twin 所追求的是更完整的個體映照，因此需要本人更深入地參與建立與持續修正，也需要透過長期互動逐步建立信任。</p>
         <p>這種深度參與不代表使用門檻更高。Contact Twin 不要求使用者學習模型、部署或任何技術配置；使用者只需透過自然、簡單的訪談與日常互動，讓 Twin 從簡入深地認識自己。越理解本人，Twin 就越能在不必事事詢問的情況下，依照本人一貫的知識、原則與意願作出合適回應，減少反覆指示與監督的負擔。</p>
       </div>
@@ -299,15 +336,34 @@ a { color: inherit; }
       </div>
     </div>
 
+    <div class="copy-grid twin-scope">
+      <div class="side-label">Define Your Twin<br>由你定義智慧分身</div>
+      <div class="prose">
+        <h3 class="scope-title">從整體智慧，到特定場景。</h3>
+        <p>每個人需要的 Twin 不必相同。使用者可以依照實際需求，選擇建立逐步整合多個生活與工作領域的「整體型主智慧分身」，也可以只為特定目的建立「場景型智慧分身」。</p>
+        <div class="scope-options">
+          <div class="scope-option">
+            <h4>整體型主智慧分身 · Primary Twin</h4>
+            <p>以較廣泛的理解為目標，逐步整合本人在不同生活與工作領域的記憶、知識、經驗、思考方式、價值觀及專業能力，形成持續演進的整體智慧映照。</p>
+          </div>
+          <div class="scope-option">
+            <h4>場景型智慧分身 · Scenario-Specific Twin</h4>
+            <p>聚焦於明確目的，例如專業工作、創作研究或客戶服務，只理解並運用與該場景相關的知識、記憶、經驗及技能，不必代表本人未授權的其他面向。</p>
+          </div>
+        </div>
+        <p>場景型智慧分身可以獨立建立，也可以在本人授權後，從主智慧分身中選取特定內容形成。無論採取哪種方式，每個 Twin 都有各自的資料範圍與權限邊界，不會自動取得未經授權的內容。使用者可以先從單一場景開始，日後再依需求擴大或整合，無須一開始就提供全部個人資料。</p>
+        <p>每個 Twin 的參考來源與學習範圍，都由使用者自行設定。使用者可以選擇是否納入 Inbox 的訊息與郵件、Cards 的聯絡人及相關資料、Drive 文件、Offer Templates、Answer 的問答紀錄與偏好、Run 的任務紀錄與使用習慣、Calendar 行程、Meetings 會議紀錄、Projects 專案內容、Deals 商務往來，以及 Contact Browser 的瀏覽活動與興趣；也可以主動提供文件、作品及其他紀錄，進一步指定個別內容或時間範圍，或排除不希望納入的資料。Twin 從所選內容理解的不只是資料本身，也包括其中呈現的專業經驗、工作方法、決策脈絡、日常習慣、興趣、人格特質與互動方式，並在授權範圍內逐步形成相關知識與技能。各項授權都能分別查看、調整或撤回；資料參考權限也與 Twin 實際採取行動的權限分開管理。</p>
+      </div>
+    </div>
+
     <div class="copy-grid">
       <div class="side-label">Evolve with a Life<br>與生命共同演進</div>
       <div class="prose">
         <div class="evolve-manifesto">複製你的意識。<span>Replicate Your Consciousness.</span></div>
         <p>這裡所說的「複製」，是一個持續演進的願景。這是 Contact Twin 對個體智慧映照的長遠追求：不只重現一個人說過的話或留下的資料，而是透過持續互動與生命經驗，逐步理解並映照其記憶、知識、情感、價值觀、思考方式與專業能力。</p>
-        <p>每個人的智慧分身，都應該從本人獨有的生命經驗中逐漸形成。Contact Twin 透過一套從簡入深、持續運作的訪談對話，慢慢了解使用者；不需要一次填寫繁複資料，也不需要學習任何 AI 技術。使用者只需像平常交流一樣回答問題、分享想法，Twin 便能逐步建立對本人的理解。</p>
+        <p>每個人的智慧分身，都應該從本人獨有的生命經驗中逐漸形成。Contact Twin 透過一套從簡入深、持續運作的訪談對話，在使用者選定的範圍內慢慢建立理解；不需要一次填寫繁複資料，也不需要學習任何 AI 技術。使用者只需像平常交流一樣回答問題、分享想法，Twin 便能逐步認識本人。</p>
         <p>想像未來，人們可以在童年便開始擁有自己的 Twin，讓智慧分身伴隨成長，逐步累積記憶、知識、經驗與思考方式。正如基因資訊的研究與預測，讓人們有機會更早理解身體、及早管理健康；從小培養的 Twin，則有機會讓人更早認識自己，讓智慧隨生命一同成長，持續累積、拓展並變得更完整、更強大。</p>
-        <p>在使用者知情同意並能查看、修正及管理資料的前提下，Twin 也可以從日常使用 Contact 的訊息與郵件方式、Answer 問答偏好、瀏覽器使用與話題關注、日常作息、工作決策風格、職業經驗與素養、人格特質，以及與不同聯絡人的互動脈絡中，持續補充對使用者的理解。使用者亦可選擇提供文件、作品及其他記錄，讓個人知識與經驗成為 Twin 的一部分。</p>
-        <p>對已經使用 Contact 生態的用戶而言，Inbox、Cards、Answer、Drive、Calendar 與 Run 能在取得授權後，為 Twin 提供自然且持續的學習脈絡。溝通、工作、思考與生活經驗不再只是分散的資料，而能逐步匯聚成更完整的個體智慧映照。</p>
+        <p>隨著使用者持續互動，並按需求逐步授權更多資料來源，Twin 能在既定範圍內持續補充理解。日常溝通、工作、思考與生活經驗不再只是分散的資料，而能逐步匯聚為更完整的智慧映照；這個範圍始終可以由本人查看與調整。</p>
       </div>
     </div>
 
@@ -341,10 +397,6 @@ a { color: inherit; }
     <div>TWIN.CONTACT</div>
   </footer>
 </div>
-<script>
-  document.querySelectorAll('.logo-slot img').forEach(function(img) {
-    img.addEventListener('error', function() { img.parentElement.classList.add('is-missing'); });
-  });
-</script>
+
 </body>
 </html>

@@ -176,12 +176,49 @@ a { color: inherit; }
   .hero,.section-dark,.footer { print-color-adjust:exact; -webkit-print-color-adjust:exact; }
   .section { break-inside:avoid; }
 }
+
+.scope-title {
+  margin: 0 0 24px;
+  color: #fff;
+  font-family: var(--serif);
+  font-size: clamp(28px, 3.8vw, 44px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -.04em;
+}
+.scope-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  margin: 30px 0;
+}
+.scope-option {
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,.24);
+}
+.scope-option h4 {
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -.02em;
+}
+.scope-option p {
+  margin: 0;
+  color: #c1cdd1;
+  font-size: 15px;
+  line-height: 1.85;
+}
+@media (max-width:760px) {
+  .scope-options { grid-template-columns: 1fr; gap: 22px; }
+}
+
 </style>
 </head>
 <body>
 <div class="page">
   <header class="topbar">
-    <div class="logo-slot" data-fallback="CONTACT"><img class="main-logo" src="../../img/contact_logo_en.png" width="200" height="65" alt="Contact logo"><span class="logo-fallback">CONTACT</span></div>
+    <div class="logo-slot" data-fallback="CONTACT"><img class="main-logo" src="../../img/contact_logo_en.png" width="200" height="65" alt="Contact logo"></div>
     <div class="top-meta">BRIDGING INTELLIGENCE &amp; CONNECTION</div>
   </header>
 
@@ -194,7 +231,7 @@ a { color: inherit; }
 
   <section class="section section-light" id="brand">
     <div class="section-head">
-      <div class="logo-slot" data-fallback="C"><img class="section-logo" src="../../img/brand.png" width="128" height="128" alt="Contact brand philosophy logo"><span class="section-logo-fallback">C</span></div>
+      <div class="logo-slot" data-fallback="C"><img class="section-logo" src="../../img/brand.png" width="128" height="128" alt="Contact brand philosophy logo"></div>
       <div>
         <p class="section-kicker">Brand Philosophy</p>
         <h2 class="section-title">The Origin of Contact</h2>
@@ -229,7 +266,7 @@ a { color: inherit; }
 
   <section class="section section-dark" id="twin">
     <div class="section-head">
-      <div class="logo-slot" data-fallback="T"><img class="section-logo" src="../../img/twin.png" width="128" height="128" alt="Contact Twin logo"><span class="section-logo-fallback">T</span></div>
+      <div class="logo-slot" data-fallback="T"><img class="section-logo" src="../../img/twin.png" width="128" height="128" alt="Contact Twin logo"></div>
       <div>
         <p class="section-kicker">Contact Twin</p>
         <h2 class="section-title">Product Purpose &amp; Vision</h2>
@@ -260,7 +297,7 @@ a { color: inherit; }
       <div class="side-label">Twin &amp; Agent</div>
       <div class="prose">
         <p><em>Agent</em> is a technical term for an AI tool that executes tasks. It usually follows defined instructions and limited objectives to complete specific work. Like a specialized machine, its scope can be easy to predict, which often makes the initial trust barrier lower. Yet when a task crosses contexts, encounters exceptions or requires judgment, people may still need to provide repeated instructions, add context and supervise the result.</p>
-        <p><em>Twin</em> has a different ambition: to understand and reflect the intelligence of a whole individual. Its purpose is not merely to imitate a voice, tone or outward appearance, but to gradually reflect a person's memories, knowledge, experience, ways of thinking, values, personality, emotional context, and the way they see the world and build relationships. A Twin is grounded in the individual's overall intelligence, becoming a counterpart that can communicate, collaborate and act on the person's behalf within authorized boundaries.</p>
+        <p><em>Twin</em> has a different ambition: to understand and reflect an individual's intelligence. Its scope can begin with a specific context and, with the person's permission, expand toward a broader understanding of the whole individual. Its purpose is not merely to imitate a voice, tone or outward appearance, but to gradually reflect a person's memories, knowledge, experience, ways of thinking, values, personality, emotional context, and the way they see the world and build relationships. Whatever its scope, a Twin draws on the knowledge and experience the person has authorized, becoming a counterpart that can communicate, collaborate and act on the person's behalf within its defined boundaries.</p>
         <p>An Agent focuses on <em>how to complete a task</em>. A Twin focuses on <em>who this person is, and how they would understand, respond and act</em>. A Twin can use Agents as execution tools, but an Agent is not a Twin. Because a Twin seeks a deeper reflection of an individual, it calls for more personal involvement in its formation and ongoing refinement, as well as trust built through sustained interaction.</p>
         <p>That depth of involvement should never mean a higher barrier to use. Contact Twin does not ask people to learn models, deployment or technical configuration. Through natural conversations and everyday interactions, the Twin comes to know the person gradually. As that understanding deepens, it can respond more appropriately—guided by the person's knowledge, principles and intentions—without needing to ask for instructions at every step.</p>
       </div>
@@ -284,15 +321,34 @@ a { color: inherit; }
       </div>
     </div>
 
+    <div class="copy-grid twin-scope">
+      <div class="side-label">Define Your Twin</div>
+      <div class="prose">
+        <h3 class="scope-title">From a Whole-Person Twin to a Focused One.</h3>
+        <p>Not everyone needs the same kind of Twin. People can choose the form that fits their needs: a comprehensive Primary Twin that gradually brings together understanding across many areas of life and work, or a scenario-specific Twin built for a clearly defined purpose.</p>
+        <div class="scope-options">
+          <div class="scope-option">
+            <h4>Comprehensive Primary Twin</h4>
+            <p>Builds a broader understanding over time, bringing together the person's memories, knowledge, experience, ways of thinking, values and professional abilities across different areas of life and work.</p>
+          </div>
+          <div class="scope-option">
+            <h4>Scenario-Specific Twin</h4>
+            <p>Focuses on a defined purpose—such as professional work, creative research or customer service—and uses only the knowledge, memories, experience and skills relevant to that context. It need not represent aspects the person has not authorized.</p>
+          </div>
+        </div>
+        <p>A scenario-specific Twin can be created independently or shaped from selected parts of a Primary Twin with the person's permission. Either way, each Twin has its own data scope and permission boundaries; it does not automatically gain access to information that has not been authorized for it. People can begin with a single scenario and broaden or integrate the scope later, without having to provide all of their personal information from the start.</p>
+        <p>Users define which sources each Twin may draw on. They can choose whether to include Inbox messages and email, Cards contacts and related information, Drive files, Offer Templates, Answer conversations and preferences, Run task records and usage patterns, Calendar events, Meetings records, Projects content, Deals and business interactions, and Contact Browser activity and interests. They can also provide documents, work samples and other records, select specific items or time ranges, and exclude anything they do not want included. From the selected sources, a Twin can learn not only from the information itself, but also from the professional experience, working methods, decision-making context, daily habits, interests, personality traits and interaction patterns reflected in it—building relevant knowledge and skills only within the authorized scope. Each permission can be reviewed, adjusted or withdrawn independently. Permission to reference information is also kept separate from permission to take actions on the person's behalf.</p>
+      </div>
+    </div>
+
     <div class="copy-grid">
       <div class="side-label">Evolve with a Life</div>
       <div class="prose">
         <div class="evolve-manifesto">Replicate Your Consciousness.</div>
         <p>“Replication” expresses an evolving ambition to reflect an individual's inner world. This is Contact Twin's long-term pursuit: not merely to reproduce what a person has said or the records they have left behind, but to gradually understand and reflect their memories, knowledge, emotions, values, ways of thinking and professional abilities through continuous interaction and lived experience.</p>
-        <p>Every person's Twin should gradually emerge from that individual's own life and experience. Through an ongoing conversation that begins simply and grows deeper over time, Contact Twin comes to know the person it represents. There is no need to complete lengthy forms or learn AI technology. People can simply talk, answer naturally and share their thoughts as the Twin develops its understanding.</p>
+        <p>Every person's Twin should gradually emerge from that individual's own life and experience. Through an ongoing conversation that begins simply and grows deeper over time, Contact Twin builds its understanding within the scope the person has chosen. There is no need to complete lengthy forms or learn AI technology. People can simply talk, answer naturally and share their thoughts as the Twin comes to know them.</p>
         <p>Imagine a future in which people can begin building their Twins in childhood, allowing them to grow alongside the individual and gradually accumulate memories, knowledge, experience and patterns of thought. If genomic research and prediction can help people understand their bodies earlier and make more informed decisions about their health, a Twin cultivated from an early age could help a person understand themselves sooner—allowing their intelligence to grow with their life, become richer and more complete, and develop greater capabilities over time.</p>
-        <p>With the person's informed consent and the ability to review, correct and manage what is learned, the Twin can build understanding from everyday Contact messages and email, Answer preferences, browser activity and interests, daily routines, work and decision-making styles, professional experience, personal qualities, and patterns of interaction with different contacts. People can also choose to provide documents, work samples and other records, allowing their knowledge and experience to become part of the Twin.</p>
-        <p>For people already using Contact, Inbox, Cards, Answer, Drive, Calendar and Run can—when authorized—provide a natural, continuous context for the Twin to learn. Communication, work, thoughts and lived experience no longer remain scattered; they can gradually come together as a richer reflection of the individual.</p>
+        <p>As people continue interacting with their Twins and authorize additional sources over time, each Twin can keep deepening its understanding within the scope already defined. Everyday communication, work, thought and lived experience need no longer remain scattered; they can gradually come together as a richer reflection of the individual, within boundaries the person can always review and adjust.</p>
       </div>
     </div>
 
@@ -326,10 +382,6 @@ a { color: inherit; }
     <div>TWIN.CONTACT</div>
   </footer>
 </div>
-<script>
-  document.querySelectorAll('.logo-slot img').forEach(function(img) {
-    img.addEventListener('error', function() { img.parentElement.classList.add('is-missing'); });
-  });
-</script>
+
 </body>
 </html>
