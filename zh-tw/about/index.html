@@ -70,6 +70,9 @@ a { color: inherit; }
 .section-head { display: grid; grid-template-columns: 76px 1fr; gap: 22px; align-items: center; margin-bottom: 52px; }
 .section-logo { width: 72px; height: 72px; object-fit: contain; display: block; }
 .section-logo-fallback { display:none; width:72px; height:72px; border:1px solid var(--line); border-radius:50%; align-items:center; justify-content:center; font-family:var(--serif); font-size:25px; }
+.section-dark .section-logo {
+  filter: brightness(0) invert(1);
+}
 .logo-slot.is-missing .section-logo-fallback { display:flex; }
 .section-kicker { margin: 0 0 8px; font-size: 10px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--cyan-deep); }
 .section-dark .section-kicker { color: var(--cyan); }
