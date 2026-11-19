@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="zh-tw">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="概念研究論文：提出由使用者治理的個人智慧架構、Primary 與 Scenario Twin、多 Twin Fusion，以及目的限定的智慧交付方式。">
+<meta name="description" content="A conceptual research paper proposing a user-governed architecture for personal intelligence, Primary and Scenario Twins, multi-Twin Fusion, and purpose-bound intelligence delivery.">
 <meta name="author" content="Contact Team">
 <meta name="generator" content="Contact Twin research paper, version 1.5">
-<title>Contact Twin 架構：跨情境個人智慧的治理式模型</title>
+<title>The Contact Twin Framework: A Governed Architecture for Personal Intelligence Across Contexts</title>
 <style>
 :root{
   --ink:#17232d;--muted:#64727d;--paper:#f4f7f8;--white:#fff;--line:#dce4e8;
@@ -184,354 +184,322 @@ tr:nth-child(even) td{background:#fafbfb}
 </style>
 </head>
 <body>
-<header class="topbar"><div class="topbar-inner"><div class="brand">CONTACT <span>RESEARCH</span></div><div class="topmeta">概念研究論文 · Version 1.5 · 2026 年 11 月 15 日</div></div></header>
+<header class="topbar"><div class="topbar-inner"><div class="brand">CONTACT <span>RESEARCH</span></div><div class="topmeta">Conceptual Research Paper · Version 1.5 · 15 November 2026</div></div></header>
 <div class="layout">
-<aside class="toc" aria-label="Table of contents"><div class="toc-title">目錄</div><nav><a href="#abstract">摘要</a><a href="#thesis">核心命題</a><a href="#intro">引言</a><a href="#gap">相關研究</a><a href="#definition">概念模型</a><a href="#twins">Twin 結構</a><a href="#learning">學習架構</a><a href="#lifecycle">智慧生命週期</a><a href="#system">參考架構</a><a href="#products">應用邊界</a><a href="#governance">治理與信任</a><a href="#evaluation">評估框架</a><a href="#hypotheses">研究命題</a><a href="#roadmap">研究議程</a><a href="#limits">限制</a><a href="#conclusion">結論</a><a href="#references">參考文獻</a></nav></aside>
+<aside class="toc" aria-label="Table of contents"><div class="toc-title">CONTENTS</div><nav><a href="#abstract">Abstract</a><a href="#thesis">Central proposition</a><a href="#intro">Introduction</a><a href="#gap">Related work</a><a href="#definition">Conceptual model</a><a href="#twins">Twin structure</a><a href="#learning">Learning architecture</a><a href="#lifecycle">Intelligence lifecycle</a><a href="#system">Reference architecture</a><a href="#products">Application boundaries</a><a href="#governance">Governance and trust</a><a href="#evaluation">Evaluation framework</a><a href="#hypotheses">Research propositions</a><a href="#roadmap">Research agenda</a><a href="#limits">Limitations</a><a href="#conclusion">Conclusion</a><a href="#references">References</a></nav></aside>
 <main><article class="paper">
 <header class="cover">
-<div class="kicker">Contact Research · 概念架構研究論文</div>
-<h1><em>Contact Twin</em><br>架構</h1>
+<div class="kicker">Contact Research · Conceptual Architecture Paper</div>
+<h1>The <em>Contact Twin</em><br>Framework</h1>
 <div class="subtitle">A Governed Architecture for Personal Intelligence Across Contexts</div>
-<div class="zh-title">跨情境個人智慧的治理式模型</div>
 <div class="cover-rule"></div>
 <div class="cover-grid">
-<div class="cover-item"><strong>AUTHOR／作者</strong>Contact Team，Contact Inc.</div>
-<div class="cover-item"><strong>RESEARCH TYPE／研究類型</strong>概念研究／架構論文</div>
-<div class="cover-item"><strong>VERSION／版本</strong>1.5 · 2026 年 11 月 15 日</div>
+<div class="cover-item"><strong>AUTHOR</strong>Contact Team, Contact Inc.</div>
+<div class="cover-item"><strong>RESEARCH TYPE</strong>Conceptual / Architecture Paper</div>
+<div class="cover-item"><strong>VERSION</strong>1.5 · 15 November 2026</div>
 </div>
-<div class="cover-foot"><span>個人智慧 · 長期學習 · 使用者自主性</span><span>Contact Twin / Contact Inc.</span></div>
+<div class="cover-foot"><span>Personal Intelligence · Longitudinal Learning · User Agency</span><span>Contact Twin / Contact Inc.</span></div>
 </header>
 <div class="docbody">
 <section class="abstract" id="abstract">
-<div class="label">Abstract</div><h2>摘要</h2>
-<p>生成式人工智慧正逐步進入長期協作、知識工作與任務執行流程，但現有個人化系統仍常以短期對話、平台內使用者設定或分散的記憶紀錄為基礎。真正困難的問題不只是保存更多個人資料，而是如何從異質、帶有不同來源且隨時間改變的資訊中，建立一份可檢查、可更正、可專化並能在適當授權下供不同應用使用的個人理解。</p>
-<p>本文提出 Contact Twin Personal Intelligence Framework，作為一套由使用者治理的個人智慧概念模型與參考架構。本文以四個相互關聯的基礎領域組織個人智慧：<em>Knowledge &amp; Experience</em>、<em>Thinking &amp; Judgment</em>、<em>Values &amp; Goals</em>，以及 <em>Personality &amp; Preferences</em>；並區分一個人的全域 <em>Primary Twin</em> 與特定場景的 <em>Scenario Twin</em>。此外，本文提出 <em>Fusion</em>，用於在指定任務中組合多個 Twin 各自授權的智慧，而不建立融合後的永久權威記憶副本；以及 <em>Purpose-Bound Intelligence Projection (PBIP)</em>，用來控制哪些智慧項目可依目的、參與者、範圍、時間與有效授權交付給 Fusion 或其他下游應用。</p>
-<p>本文並以「智慧映照」（<em>personal-intelligence mirroring</em>）作為核心設計原則，指持續建立與維護一份外部、可修正且以證據為基礎的個人智慧表徵，並使其受到情境範圍與使用者治理的約束。</p>
-<p>本文的主要貢獻是整合個人智慧語義模型、全域與場景專化結構、多 Twin 任務組合方式，以及受治理的智慧交付契約。本文不主張四個領域是人類心理的終極分類，也不將 Twin 定義為意識或完整人格的複製。本文屬概念與架構研究；各項設計命題尚未獲得實證確認，仍須透過實作、安全測試、縱向使用者研究與對照實驗評估。</p>
-<div class="keywords"><strong>關鍵字：</strong>個人智慧、智慧映照、個人記憶、使用者建模、Primary Twin、Scenario Twin、Twin Fusion、目的限定智慧投影、情境治理、人機互動、AI Agent</div>
+<div class="label">Abstract</div>
+<h2>Abstract</h2>
+<p>As generative AI systems move from short exchanges toward sustained collaboration and task execution, personalization requires more than retaining conversation history or a static preference profile. A system must form a revisable account of a person from heterogeneous information distributed across services, authored by different people, and subject to change over time. It must also distinguish what is known, what is inferred, the context in which a statement applies, and the purposes for which that information may be used.</p>
+<p>This paper proposes the <em>Contact Twin Personal Intelligence Framework</em> as a user-governed conceptual model and reference architecture. It organizes personal intelligence through four related semantic domains: <em>Knowledge &amp; Experience</em>, <em>Thinking &amp; Judgment</em>, <em>Values &amp; Goals</em>, and <em>Personality &amp; Preferences</em>. It distinguishes one global <em>Primary Twin</em> from purpose-scoped <em>Scenario Twins</em>. It further introduces <em>Fusion</em>, a task-scoped composition of separately authorized intelligence from multiple Twins, and <em>Purpose-Bound Intelligence Projection (PBIP)</em>, a proposed contract for determining what intelligence may be delivered to a Fusion or another downstream application according to purpose, participant, scope, time, and valid authorization.</p>
+<p>The framework adopts <em>personal-intelligence mirroring</em> as a central design principle: the ongoing construction and maintenance of an external, revisable, evidence-grounded representation of selected aspects of a person, bounded by context and user governance.</p>
+<p>The contribution is an integrated set of architectural design decisions concerning semantic organization, global-to-scenario specialization, non-destructive multi-Twin composition, and governed delivery. The four domains are not presented as a definitive psychological taxonomy, and a Twin is not a replication of consciousness or a complete human identity. This is a conceptual and architectural proposal, not an empirical evaluation. Its propositions require implementation studies, security testing, longitudinal user research, and controlled comparisons.</p>
+<div class="keywords"><strong>Keywords:</strong> Personal intelligence; <em>personal-intelligence mirroring</em>; personal memory; user modeling; Primary Twin; Scenario Twin; Twin Fusion; purpose-bound intelligence projection; contextual governance; human–AI interaction; AI agents.</div>
 </section>
-<div class="notice"><strong>研究定位與限制：</strong>本文提出一套待評估的概念模型與參考架構，不是已完成的產品效果研究、系統性文獻回顧或經標準化的技術規格。文中 PBIP 為本文提出的架構與操作契約名稱，不表示它已成為通用標準或經驗證的新型安全協議。</div>
+<div class="notice"><strong>Scope and status.</strong> This paper proposes a conceptual model and reference architecture. It is not a product-effectiveness study, a systematic literature review, a standardized technical specification, or a validated security protocol. PBIP is a proposed architectural and operational contract, not an established standard.</div>
 <section id="thesis">
-<h2>核心命題</h2>
-<div class="callout"><div class="big">個人智慧必須能隨時間形成與修正，也必須能依場景專化、依任務組合，並在使用者授權下有限度地交付。</div><p>Contact Twin 的目標不是累積最多個人資料，而是建立一份來源可追溯、時間有效性清楚、適用範圍可辨識，且能由使用者檢視、修正與控制的個人理解模型。</p></div>
-<p>本文以三個概念層次作為分析起點：</p><div class="formula">Personal Data ≠ Personal Memory ≠ Personal Intelligence</div>
-<p>這是一組用於架構設計的概念區分，而不是互斥的法律分類。<strong>Personal Data</strong> 指使用者提供、產生或授權處理的資料；<strong>Personal Memory</strong> 指從資料中整理、保留且可追溯的記憶項目；<strong>Personal Intelligence</strong> 指透過記憶之間的關係、證據、時間與情境，形成可供特定任務使用的個人理解。記憶與智慧本身仍可能構成個人資料，並應接受適用的法律與資料治理要求。</p>
+<h2>Central proposition</h2>
+<div class="callout"><div class="big">Personal intelligence should be able to develop and be corrected over time, specialize by context, be composed for a task, and be delivered only within the user's authorization.</div><p>The objective is not to accumulate the largest possible quantity of personal data. It is to maintain an account of a person whose sources, temporal validity, and applicable scope can be inspected, corrected, and governed by that person.</p></div>
+<p>The framework begins with a design distinction:</p>
+<div class="formula">Personal Data ≠ Personal Memory ≠ Personal Intelligence</div>
+<p>This is a conceptual distinction for system design, not a set of mutually exclusive legal categories. <strong>Personal Data</strong> refers to data supplied, generated, or authorized for processing. <strong>Personal Memory</strong> refers to retained and traceable items organized from such data. <strong>Personal Intelligence</strong> refers to an application-oriented understanding formed through relationships among memories, evidence, time, and context. Personal memories and intelligence may themselves constitute personal data and remain subject to applicable legal and governance requirements.</p>
 </section>
 <section id="intro">
-<h2>引言：從跨工具記憶到可治理的個人智慧</h2>
-<p class="lead">當 AI 從單次問答走向長期協作，系統需要的不只是更大的上下文視窗，而是對個人知識、經驗、判斷、目標與偏好形成持續但可修正的理解。</p>
-<p>使用者的資料與活動分散於文件、郵件、訊息、日曆、專案、工作流程及不同 AI 服務。單一平台通常只掌握局部背景；而單純匯集所有資料，又可能造成過度蒐集、錯誤歸因、資訊過時及跨場景洩漏。個人化因此同時是一個建模問題與治理問題：系統必須知道哪些內容可能代表使用者、這些內容在何時與何種情境下成立，以及誰能為何種目的使用它們。</p>
-<p>自傳式記憶、使用者建模、個人資訊系統與近期 LLM Agent 記憶研究，分別探討記憶建構、個人模型、反思流程及長期互動中的資訊保留 [1–8]。然而，對一套面向真實個人的長期智慧架構而言，還需要明確處理全域與場景的關係、多個獨立 Twin 的任務協作，以及智慧從個人模型向下游應用交付時的權限邊界。</p>
-<h3>1.1 研究問題</h3>
+<h2>Introduction: From cross-tool memory to governed personal intelligence</h2>
+<p class="lead">As AI moves from one-off question answering toward ongoing collaboration, the central requirement is not simply a larger context window. It is a continuing, but revisable, understanding of a person's knowledge, experience, judgment, goals, and preferences.</p>
+<p>Information about a person is distributed across documents, email, messages, calendars, projects, workflows, and multiple AI services. A single platform usually sees only part of this context. Conversely, indiscriminately aggregating all available data can produce excessive collection, mistaken attribution, stale information, and leakage between contexts. Personalization is therefore both a modeling problem and a governance problem. A system must identify which information may describe the person, when and under what circumstances it applies, and who may use it for which purpose.</p>
+<p>Research on autobiographical memory, user modeling, personal informatics, and recent LLM-agent memory addresses memory construction, user representations, reflection, and information retention during extended interaction [1–8]. A long-term architecture for personal intelligence must additionally define the relationship between global and scenario-specific knowledge, the composition of intelligence from independent Twins, and the authorization boundary governing delivery to downstream applications.</p>
+<h3>Research questions</h3>
 <ol>
-<li>如何把異質、零散且隨時間變化的個人資料，整理成具來源、時間、範圍與可更正能力的個人智慧模型？</li>
-<li>如何以穩定且可理解的語義架構，表示個人的知識與經驗、思維與判斷、價值觀與目標、性格與偏好？</li>
-<li>如何在維持全域一致性的同時，建立不互相污染的場景專化 Twin？</li>
-<li>如何讓多個獨立 Twin 在特定任務中組合必要智慧，而不合併其永久身份或建立重複的權威記憶？</li>
-<li>如何以可檢查、可限制及可撤銷的方式，把個人智慧交付給 Fusion 與其他下游應用？</li>
-<li>如何衡量這套架構對任務效益、使用者自主性與隱私風險的整體影響？</li>
+<li>How can heterogeneous and time-varying personal information be organized into a model with traceable sources, temporal validity, explicit scope, and correction mechanisms?</li>
+<li>How can a stable and understandable semantic structure represent knowledge and experience, thinking and judgment, values and goals, and personality and preferences?</li>
+<li>How can a system preserve global coherence while creating scenario-specific Twins that do not contaminate one another?</li>
+<li>How can independent Twins contribute authorized intelligence to a shared task without merging their permanent identities or creating a duplicate authoritative memory store?</li>
+<li>How can personal intelligence be delivered to a Fusion or another downstream application through inspectable, limited, and revocable authorization?</li>
+<li>How should the architecture's effects on task utility, user agency, and privacy risk be evaluated together?</li>
 </ol>
-<h3>1.2 本文的架構貢獻</h3>
+<h3>Architectural contributions</h3>
 <ol>
-<li>區分個人資料、個人記憶與個人智慧在系統建模上的不同角色。</li>
-<li>提出四個相互關聯的個人智慧基礎領域，以及兩個橫向情境資訊層。</li>
-<li>提出以單一 Primary Twin 為全域基礎、以 Scenario Twin 作為範圍化專化的結構。</li>
-<li>提出 Fusion 作為多個 Twin 在指定任務中的授權組合視圖，而非新的永久智慧擁有者。</li>
-<li>提出 PBIP 作為個人智慧交付至 Fusion 或下游應用的目的限定操作契約。</li>
-<li>提出來源、證據、時間、範圍、同意、撤權與下游責任等治理要求，以及待驗證的評估命題。</li>
+<li>A distinction among personal data, personal memory, and personal intelligence for system modeling.</li>
+<li>A semantic model with four related domains and two cross-cutting contextual layers.</li>
+<li>A structure in which one Primary Twin provides the global foundation and Scenario Twins provide scoped specialization.</li>
+<li>Fusion as an authorized, task-scoped composition of multiple Twins rather than a new permanent owner of merged intelligence.</li>
+<li>PBIP as a proposed purpose-bound contract for delivering intelligence to a Fusion or another downstream application.</li>
+<li>Governance requirements for provenance, evidence, time, scope, consent, revocation, downstream responsibility, and future evaluation.</li>
 </ol>
-<h3>1.5 研究方法與範圍</h3>
-<p>本文採概念架構研究取徑，透過選定的相鄰研究建立問題脈絡，再依個人智慧長期形成、場景隔離、多方協作及跨應用交付等需求，提出概念定義、架構關係與可檢驗命題。本文不是系統性文獻回顧，也沒有宣稱已完成產品實作或使用者實驗。本文的主張應由概念清晰度、構件可操作性、治理完整性及後續實證結果共同評估。</p>
+<h3>Method and scope</h3>
+<p>This paper follows a conceptual architecture approach. It uses selected adjacent research to establish the problem context, then derives design requirements from longitudinal personal intelligence, scenario isolation, multi-party collaboration, and cross-application delivery. It proposes definitions, architectural relationships, and testable propositions. It is not a systematic literature review and does not report a completed product implementation or user experiment. The proposal should be assessed through conceptual clarity, operational feasibility, governance completeness, and subsequent empirical evidence.</p>
 </section>
 <section id="gap">
-<h2>相關研究與理論定位</h2>
-<p>本節採主題式文獻定位，而非系統性回顧。目的在於辨識相鄰研究已處理的問題、其研究對象與方法範圍，並說明本文架構所提出的整合性設計決策。</p>
-<h3>2.1 自傳式記憶與個人知識</h3>
-<p>Conway 與 Pleydell-Pearce 的 Self-Memory System 將自傳式記憶視為個人知識與當前目標相互作用下的建構，而非單純保存事件清單 [1]。這項理論提醒個人經驗、目標與自我理解彼此相關。然而，本文不試圖提出心理學記憶理論，而是探討如何把來源可追溯的個人資訊轉化為可檢查、可修正並可受治理的應用層模型。</p>
-<h3>2.2 User Modeling 與個人化系統</h3>
-<p>使用者建模研究早已探討如何建立可由多個自適應應用使用的使用者模型，以及如何將使用者模型服務與單一應用分離 [2, 3]。這些研究構成跨應用個人模型的重要基礎。Contact Twin 延續「可重用的個人模型」問題，但將建模範圍延伸至長期經驗、判斷方式、價值與目標，並把來源、時間、情境及使用授權視為模型本身不可忽略的屬性。</p>
-<h3>2.3 Personal Informatics 與反思流程</h3>
-<p>Personal Informatics 研究個人如何收集、整合、反思與採取行動，並指出資料收集與理解過程中存在多階段障礙 [4]。這類研究有助於理解個人如何從自己的資料形成自我知識。本文的重點則更偏向長期智慧服務架構：不只支持個人反思，也管理資料如何進入模型、如何在不同場景中適用，以及如何被其他應用使用。</p>
-<h3>2.4 LLM Agent 的記憶、反思與長期互動</h3>
-<p>Generative Agents 結合經驗記錄、反思與檢索，研究模擬角色如何依過去經驗產生後續行為 [5]；Reflexion 使用語言形式的反饋改善 Agent 後續任務表現 [6]；MemGPT 則以分層上下文管理延伸長期互動與文件處理能力 [7]。近期對 LLM Agent 記憶機制的回顧，進一步整理了記憶來源、表示形式、操作方式及評估方法 [8]。這些工作主要關注 Agent 的任務表現、模擬行為或上下文管理；Contact Twin 的主要對象則是真實使用者的個人智慧，因而必須額外處理資料主體權利、錯誤歸因、跨場景隔離及授權傳遞。Agent 的反思結果不能自動等同於使用者的穩定信念或人格。</p>
-<h3>2.5 Multi-Agent Collaboration 與多 Twin 組合</h3>
-<p>Multi-Agent Systems 研究多個相對獨立的 Agent 如何協調、分工與共同解決問題 [9]。Twin Fusion 與這類研究相關，但處理的問題不完全相同：它不只是安排 Agent 如何協作，而是先決定每個 Twin 的哪一部分個人智慧可以在某項共同任務中被使用。Fusion 因此需要把參與者各自的授權與來源邊界保留在組合流程中，不能以「加入同一團隊」推定所有資料都可以互相共享。</p>
-<h3>2.6 Contextual Privacy、Access Control 與 Human-AI Interaction</h3>
-<p>Contextual Integrity 強調資訊流動是否合宜，必須放回具體情境與傳遞規範中理解 [10]。Attribute-Based Access Control（ABAC）則提供以主體、資源、操作與環境屬性判定授權的成熟方法 [11]。Human-AI Interaction 指引強調系統應讓使用者理解 AI 的能力、限制與錯誤，並能在互動過程中維持適當控制 [12]。Stanford Digital Economy Lab 於 2025 年 12 月 18 日發布的工作論文《Robust AI Personalization Controls: The Human Context Protocol》提出 HCP，將個人偏好視為可跨 AI 系統使用的可攜、由使用者治理的層，並討論互通性、範圍化存取與撤權 [13]。該團隊其後於 2026 年 3 月 16 日發布《The Future of Personal AI》研究報告，進一步討論可攜、持續的個人記憶，以及依角色、同意與目的選擇性分享 [14]。這些工作與本文在跨工具個人脈絡、使用者治理及受限分享等問題上有實質重疊，且 HCP 工作論文早於本文版本日期。因此，本文不主張首創可攜式個人記憶、跨應用脈絡交換、範圍化存取或目的選擇性分享。本文提出的整合方式——四個語義領域、Primary／Scenario 專化、多個獨立 Twin 的非破壞式 Fusion，以及 PBIP 任務交付契約——應被視為一組待比較與驗證的架構決策，並須與 HCP 等相鄰架構進行直接的功能、資料模型與治理比較。[13] 是 Stanford 刊載的工作論文紀錄，[14] 是機構研究報告；本文不將兩者標示為同儕審查期刊論文。</p>
-<h3>2.7 相鄰研究與本文架構的問題分工</h3>
-<div class="table-wrap"><table><thead><tr><th>研究路線</th><th>主要關注</th><th>本文提出的架構問題</th></tr></thead><tbody>
-<tr><td>自傳式記憶 [1]</td><td>個人記憶、目標與自我知識的關係</td><td>將個人相關資訊組織為具來源、時間與情境標記的系統模型</td></tr>
-<tr><td>使用者建模 [2, 3]</td><td>個人模型與跨應用自適應</td><td>加入明確的智慧語義領域、場景專化及目的限定交付</td></tr>
-<tr><td>Personal Informatics [4]</td><td>個人資料收集、整合、反思與行動</td><td>管理長期模型的形成、修正與下游使用</td></tr>
-<tr><td>LLM Agent Memory [5–8]</td><td>Agent 記憶、反思、上下文管理與任務表現</td><td>以真實使用者為主體，保留使用者權利、來源與跨場景邊界</td></tr>
-<tr><td>Multi-Agent Systems [9]</td><td>多個 Agent 的協調與合作</td><td>在協作之前治理多個 Twin 的個人智慧組合</td></tr>
-<tr><td>隱私與存取控制 [10, 11]</td><td>情境適切性與政策授權</td><td>將用途、參與者、任務、時間與來源嵌入智慧交付流程</td></tr>
-<tr><td>Human-AI / Portable Memory [12, 14]</td><td>使用者控制、互通性與長期個人脈絡</td><td>整合 Primary / Scenario、Fusion 與 PBIP 的架構關係</td></tr>
+<h2>Related work and theoretical positioning</h2>
+<p>This is a thematic positioning of selected work, not a systematic review. Its purpose is to identify problems already addressed by neighboring research, clarify their scope, and locate the architectural decisions proposed here.</p>
+<h3>Autobiographical memory and personal knowledge</h3>
+<p>Conway and Pleydell-Pearce's Self-Memory System describes autobiographical memory as a construction shaped by the interaction between personal knowledge and current goals, rather than as a simple list of stored events [1]. This perspective highlights the relationship between experience, goals, and self-understanding. The present paper does not propose a psychological theory of memory. It asks how personal information with traceable provenance can be represented in an inspectable, revisable, and governed application model.</p>
+<h3>User modeling and personalization</h3>
+<p>User-modeling research has long examined reusable representations of individuals and the separation of user-model services from single applications [2, 3]. This work provides an important foundation for cross-application personal models. Contact Twin extends the design question to long-term experience, judgment, values, and goals, while treating source, time, context, and authorization as essential model attributes rather than optional settings.</p>
+<h3>Personal informatics and reflection</h3>
+<p>Personal-informatics research studies how people collect, integrate, reflect on, and act upon personal information, and identifies barriers across these stages [4]. It helps explain how individuals may develop self-knowledge from their own data. The present framework focuses more directly on the architecture of a persistent intelligence service: how information enters and changes a model, how it applies across contexts, and how other applications may use it.</p>
+<h3>Memory, reflection, and long-term interaction in LLM agents</h3>
+<p>Generative Agents combine experience records, reflection, and retrieval to study how simulated characters produce later behavior [5]. Reflexion uses language-based feedback to improve an agent's subsequent task performance [6]. MemGPT explores hierarchical context management for extended interaction and document handling [7]. A more recent survey organizes mechanisms for memory in LLM-based agents, including sources, representations, operations, and evaluation [8]. These works primarily study agent performance, simulated behavior, or context management. Contact Twin instead models intelligence about real people and must therefore address data-subject rights, mistaken attribution, cross-context isolation, and authorization transfer. An agent's reflection must not automatically be treated as a person's stable belief or personality.</p>
+<h3>Multi-agent collaboration and multi-Twin composition</h3>
+<p>Multi-agent systems research examines how relatively independent agents coordinate, divide work, and solve problems together [9]. Twin Fusion is related, but addresses an additional question: before collaboration begins, which parts of each participant's personal intelligence may be used for the shared task? Fusion therefore needs to preserve each participant's authorization and provenance boundaries throughout composition. Membership in the same team cannot be treated as permission to share all personal information.</p>
+<h3>Contextual privacy, access control, and human–AI interaction</h3>
+<p>Contextual Integrity evaluates information flows in relation to the norms of a particular context [10]. Attribute-Based Access Control (ABAC) provides established mechanisms for deciding authorization from attributes associated with subjects, resources, operations, and environmental conditions [11]. Human–AI interaction guidelines emphasize that systems should communicate capabilities and limitations, help users understand errors, and preserve appropriate user control [12].</p>
+<p>On 18 December 2025, the Stanford Digital Economy Lab published the working paper <em>Robust AI Personalization Controls: The Human Context Protocol</em>. It proposes HCP as a user-centric, portable layer for personal preferences across AI systems and discusses interoperability, scoped access, and revocation [13]. On 16 March 2026, the Lab published <em>The Future of Personal AI</em>, a research report that further addresses portable and persistent personal memory and selective sharing by role, consent, and purpose [14]. These works substantially overlap with this paper's problem space of cross-tool personal context, user governance, and controlled sharing; the HCP working paper also predates the version date of this paper. Accordingly, this paper does not claim to originate portable personal memory, cross-application context exchange, scoped access, or purpose-selective sharing. The proposed integration—four semantic domains, Primary/Scenario specialization, non-destructive Fusion among independent Twins, and the PBIP task-delivery contract—should be treated as architectural decisions requiring direct comparison with HCP at the levels of functionality, data model, and governance. Reference [13] is a working paper record and [14] an institutional research report; neither is represented here as a peer-reviewed journal article.</p>
+<h3>How adjacent research relates to this framework</h3>
+<div class="table-wrap"><table><thead><tr><th>Research area</th><th>Primary concern</th><th>Architectural question addressed here</th></tr></thead><tbody>
+<tr><td>Autobiographical memory [1]</td><td>Relationships among memory, goals, and self-knowledge</td><td>Represent personal information with source, time, and context attributes</td></tr>
+<tr><td>User modeling [2, 3]</td><td>Personal models and cross-application adaptation</td><td>Add explicit intelligence domains, scenario specialization, and purpose-bound delivery</td></tr>
+<tr><td>Personal informatics [4]</td><td>Collection, integration, reflection, and action</td><td>Govern the formation, revision, and downstream use of a long-term model</td></tr>
+<tr><td>LLM-agent memory [5–8]</td><td>Agent memory, reflection, context management, and task performance</td><td>Model a real person while preserving rights, provenance, and contextual boundaries</td></tr>
+<tr><td>Multi-agent systems [9]</td><td>Coordination and cooperation among agents</td><td>Govern the composition of personal intelligence before collaboration</td></tr>
+<tr><td>Privacy and access control [10, 11]</td><td>Contextual appropriateness and policy-based authorization</td><td>Embed purpose, participants, task, time, and provenance in intelligence delivery</td></tr>
+<tr><td>Human–AI interaction and portable memory [12, 14]</td><td>User control, interoperability, and persistent personal context</td><td>Relate Primary/Scenario, Fusion, and PBIP within one reference architecture</td></tr>
 </tbody></table></div>
-<h3>與 Human Context Protocol（HCP）的直接比較</h3>
-<div class="table-wrap"><table><thead><tr><th>比較面向</th><th>HCP 相關工作 [13]</th><th>本文提出的 Contact Twin 架構</th></tr></thead><tbody>
-<tr><td>核心對象</td><td>跨 AI 系統可攜、由使用者治理的偏好與個人脈絡</td><td>具來源與時間資訊的較廣義個人智慧，包括知識經驗、思維判斷、價值目標及性格偏好</td></tr>
-<tr><td>主要架構層級</td><td>LLM 用戶端與記憶管理器之間的搜尋、偏好更新及互通契約</td><td>個人智慧語義模型、Primary／Scenario 結構，以及跨應用交付參考架構</td></tr>
-<tr><td>範圍與授權</td><td>強調可攜性、使用者控制、範圍化存取及撤權</td><td>提出 PBIP，將任務目的、參與者、範圍、操作、時間與同意納入投影判定</td></tr>
-<tr><td>多方組合</td><td>本文引用的 HCP 工作材料主要聚焦偏好可攜與跨系統使用</td><td>另提出 Fusion，明確處理多個獨立 Twin 在單一任務中的授權組合</td></tr>
-<tr><td>證據狀態</td><td>Stanford 刊載的工作論文及機構研究資料，須按其出版類型理解</td><td>概念與架構提案，尚無本文自己的實證驗證</td></tr>
+<h3>Direct comparison with the Human Context Protocol (HCP)</h3>
+<div class="table-wrap"><table><thead><tr><th>Dimension</th><th>HCP-related work [13]</th><th>Contact Twin proposal</th></tr></thead><tbody>
+<tr><td>Primary object</td><td>Portable, user-governed preferences and personal context across AI systems</td><td>A broader personal-intelligence model with provenance and time attributes across knowledge, judgment, values, and preferences</td></tr>
+<tr><td>Architectural level</td><td>Search, preference-update, and interoperability contracts between LLM clients and memory managers</td><td>Semantic personal-intelligence model, Primary/Scenario structure, and cross-application reference architecture</td></tr>
+<tr><td>Scope and authorization</td><td>Emphasizes portability, user control, scoped access, and revocation</td><td>Proposes PBIP to evaluate task purpose, participants, scope, operations, time, and consent for each projection</td></tr>
+<tr><td>Multi-party composition</td><td>The HCP materials cited here primarily address portable preferences and cross-system use</td><td>Also proposes Fusion for authorized composition of multiple independent Twins within one task</td></tr>
+<tr><td>Evidence status</td><td>Stanford working paper and institutional research material, to be interpreted according to publication type</td><td>Conceptual and architectural proposal without empirical validation in this paper</td></tr>
 </tbody></table></div>
-<p>上述差異是本文對兩組公開架構描述的初步範圍比較，不表示兩者互斥，也不證明本文構件具有新穎性或優越性。仍需閱讀完整規格與實作，對資料表示、政策語義、撤權傳遞、快取處置、第三方資料及互通方式進行逐項比較。</p>
-<p>因此，本文不主張個人記憶、使用者建模、多 Agent 協作或目的限制本身是新的研究領域。本文提出的是一組尚待驗證的架構整合：以四個領域組織個人智慧；以 Primary / Scenario 管理全域與場景關係；以 Fusion 組合多個 Twin 在任務中的授權智慧；並以 PBIP 控制智慧如何交付。這些概念是否構成相對於既有方法的實質新增價值，仍需更完整的系統性文獻回顧與實作比較。</p>
+<p>This is a preliminary scope comparison based on the cited public descriptions. It does not imply that the approaches are mutually exclusive, nor does it establish novelty or superiority for the proposed components. A detailed comparison requires examination of full specifications and implementations, including data representation, policy semantics, revocation propagation, cache handling, third-party information, and interoperability.</p>
+<p>This paper does not claim that personal memory, user modeling, multi-agent collaboration, or purpose limitation is a new research field. It proposes an integration of design choices: four domains for organizing personal intelligence; Primary and Scenario Twins for global and contextual structure; Fusion for authorized task composition; and PBIP for governed delivery. Whether this combination offers material value beyond existing approaches requires a fuller systematic review and comparative implementation studies.</p>
 </section>
 <section id="definition">
-<h2>個人智慧的定義與四大基礎領域</h2>
-<p>本文將 <strong>Personal Intelligence</strong> 定義為：一個持續演化、具來源與證據關聯、時間有效性、情境範圍及使用者治理能力的個人理解模型。它組織個人的知識與經驗、思維與判斷、價值觀與目標，以及性格與偏好，並依任務提供有限且相關的脈絡。</p>
-<h3>智慧映照：個人智慧的設計原則</h3>
-<p>本文所稱的「智慧映照」，是指持續建立與維護一份關於個人的外部智慧表徵。這份表徵以可追溯且經適當授權的證據為基礎，涵蓋個人在知識與經驗、思維與判斷、價值觀與目標，以及性格與偏好等方面的選定資訊與理解。表徵須保留來源、時間有效性、情境範圍與不確定性，並讓本人能夠檢視、更正、限制其使用及撤回相關授權。</p>
-<p>Twin 是一份關於個人的受治理模型。其準確程度受到可取得證據、資料品質及資訊取得情境的限制，無法完整呈現個人的全部經驗、意識或身份。智慧映照是建立與維護 Personal Intelligence 的設計原則；四個語義領域則提供組織這份表徵的基本結構。</p>
-<div class="notice"><strong>分類界線：</strong>四個領域是為產品可理解性、工程一致性與研究操作化提出的架構性分類，不是經心理測量驗證的完整人格理論、認知科學分類或臨床工具。</div>
-<div class="dimension"><div class="dimension-head"><div><h3>Knowledge &amp; Experience</h3><div class="translation">知識與經驗 · What a person knows and has experienced</div></div><span class="tag">WHAT</span></div><p class="question">核心問題：個人知道什麼、具備什麼能力，以及經歷過什麼？</p><p>包含教育與專業背景、知識、技能、專長、工作與人生經歷、專案成果、成功與失敗，以及由實踐形成的教訓。系統必須區分「文件中出現的知識」與「使用者本人已掌握或確認具備的知識與能力」。</p></div>
-<div class="dimension"><div class="dimension-head"><div><h3>Thinking &amp; Judgment</h3><div class="translation">思維與判斷 · How a person reasons and decides</div></div><span class="tag">HOW</span></div><p class="question">核心問題：個人如何理解問題、推理、評估與作出判斷？</p><p>包含分析方式、推理策略、問題解決、決策框架、風險評估、取捨標準及自我反省。重要的不只是結論，也包括形成結論的理由、證據、假設與不確定性。一次選擇不足以證明穩定的思考模式；重複觀察應先成為待確認的候選理解。</p></div>
-<div class="dimension"><div class="dimension-head"><div><h3>Values &amp; Goals</h3><div class="translation">價值觀與目標 · What a person values and seeks</div></div><span class="tag">WHY</span></div><p class="question">核心問題：個人重視什麼、相信什麼，以及希望達成什麼？</p><p>包含信念、原則、動機、優先事項、人生與職涯目標、商業目標及長期願景。價值觀與目標不可只由消費、點擊或工作行為推定；使用者明確陳述或確認應是主要依據。目標需要時間與狀態資訊，因為它可能完成、暫停、變更或失效。</p></div>
-<div class="dimension"><div class="dimension-head"><div><h3>Personality &amp; Preferences</h3><div class="translation">性格與個人偏好 · Relatively stable traits and contextual preferences</div></div><span class="tag">STYLE</span></div><p class="question">核心問題：有哪些相對穩定的個人特徵，以及個人偏好如何互動與工作？</p><p>包含溝通方式、審美與選擇偏好、工作習慣、協作風格及可能的行為傾向。性格特徵與情境性偏好必須區分；單次情緒或行為不能直接轉成永久標籤。任何推論均應保留不確定性、可檢視性與刪除途徑，不作未經同意的心理定性或臨床診斷。</p></div>
-<h3>3.1 四個領域是多重語義索引，而非互斥資料夾</h3>
-<p>同一個事件可能同時反映專業經驗、判斷方法、個人價值與互動偏好。因此，四個領域應允許多重標記及彼此關聯，而非要求每項記憶只能放入一個資料夾。</p>
-<h3>3.2 兩個橫向資訊層</h3>
-<div class="grid2"><div class="card"><h3>Identity &amp; Relationships</h3><p>身份、角色、關係、家庭、同事、客戶、合作夥伴與組織。用於標示資訊涉及誰、由誰提出，以及使用者在關係中的角色。</p></div><div class="card"><h3>State &amp; Context</h3><p>時間、地點、當前專案、生活階段、環境、期限及臨時限制。用於表示資訊何時與在何種情境下成立。</p></div></div>
-<h3>3.3 個人智慧的概念表示</h3>
-<p>對使用者 <em>u</em> 與時間 <em>t</em>，將個人智慧視為一組具語義標記及治理中繼資料的記憶項目：</p>
+<h2>Conceptual model: Defining personal intelligence</h2>
+<p><strong>Personal Intelligence</strong> is defined here as a continuously revisable model of a person that maintains relationships to sources and evidence, temporal validity, contextual scope, and mechanisms for user governance. It organizes knowledge and experience, thinking and judgment, values and goals, and personality and preferences, then supplies bounded context for a particular task.</p>
+<h3>Personal-intelligence mirroring as a design principle</h3>
+<p>In this paper, <em>personal-intelligence mirroring</em> refers to the ongoing construction and maintenance of an external representation of selected aspects of a person. The representation is grounded in traceable, appropriately authorized evidence and covers the person's knowledge and experience, thinking and judgment, values and goals, and personality and preferences. It retains provenance, temporal validity, contextual scope, and uncertainty, and remains open to the person's inspection, correction, restriction, and withdrawal of authorization.</p>
+<p>A Twin is a governed model about a person. Its accuracy is bounded by available evidence, data quality, and the context in which information was obtained; it cannot represent the person's entire experience, consciousness, or identity. Personal-intelligence mirroring is the design principle for constructing and maintaining Personal Intelligence, while the four semantic domains provide its organizing structure.</p>
+<div class="notice"><strong>Classification boundary.</strong> The four domains are architectural categories intended to support usability, engineering consistency, and research operationalization. They are not a psychometrically validated theory of personality, a complete cognitive-science taxonomy, or a clinical instrument.</div>
+<div class="dimension"><div class="dimension-head"><div><h3>Knowledge &amp; Experience</h3><div class="translation">What a person knows and has experienced</div></div><span class="tag">WHAT</span></div><p class="question">Core question: What knowledge, capabilities, and experiences can be attributed to the person?</p><p>This domain may include education and professional background, knowledge, skills, areas of expertise, work and life experience, project outcomes, successes, failures, and lessons formed through practice. The system must distinguish knowledge appearing in a document from knowledge or capability that the user has personally acquired or confirmed.</p></div>
+<div class="dimension"><div class="dimension-head"><div><h3>Thinking &amp; Judgment</h3><div class="translation">How a person reasons and decides</div></div><span class="tag">HOW</span></div><p class="question">Core question: How does the person understand problems, reason, evaluate, and make judgments?</p><p>This domain may include analytical approaches, reasoning strategies, problem solving, decision frameworks, risk evaluation, trade-off criteria, and reflection. The relevant record is not only the conclusion but also its reasons, evidence, assumptions, and uncertainty. One decision does not establish a stable thinking pattern; repeated observations should initially remain candidate interpretations for review.</p></div>
+<div class="dimension"><div class="dimension-head"><div><h3>Values &amp; Goals</h3><div class="translation">What a person values and seeks</div></div><span class="tag">WHY</span></div><p class="question">Core question: What does the person consider important, believe, and seek to achieve?</p><p>This domain may include beliefs, principles, motivations, priorities, life and career goals, business objectives, and long-term aspirations. Values and goals should not be inferred solely from purchases, clicks, or work behavior. Explicit statements or confirmation by the user should be the primary basis. Goals also require temporal and status information because they may be completed, paused, changed, or become obsolete.</p></div>
+<div class="dimension"><div class="dimension-head"><div><h3>Personality &amp; Preferences</h3><div class="translation">Relatively stable traits and contextual preferences</div></div><span class="tag">STYLE</span></div><p class="question">Core question: Which relatively stable characteristics and interaction preferences are relevant?</p><p>This domain may include communication style, aesthetic and choice preferences, work habits, collaboration style, and possible behavioral tendencies. Relatively stable characteristics must be distinguished from context-dependent preferences. A single mood or behavior should not become a permanent label. Inferences should remain uncertain, inspectable, and deletable; the system should not perform unconsented psychological labeling or clinical diagnosis.</p></div>
+<h3>The four domains are multi-label semantic indices</h3>
+<p>A single event may concern professional experience, judgment, personal values, and interaction preferences at the same time. The domains should therefore support multiple labels and relationships rather than forcing every memory into one exclusive folder.</p>
+<h3>Two cross-cutting contextual layers</h3>
+<div class="grid2"><div class="card"><h3>Identity &amp; Relationships</h3><p>Identity, roles, relationships, family, colleagues, clients, partners, and organizations. This layer helps identify who is involved, who authored a statement, and what role the user occupies in a relationship.</p></div><div class="card"><h3>State &amp; Context</h3><p>Time, location, current projects, life stages, environment, deadlines, and temporary constraints. This layer records when and under what circumstances an item applies.</p></div></div>
+<h3>A conceptual representation</h3>
+<p>For a person <em>u</em> at time <em>t</em>, personal intelligence can be represented as a set of memory items with semantic labels and governance metadata:</p>
 <div class="formula">PI<sub>u</sub>(t) = { M<sub>u</sub>(t), D, IR, SC, G }</div>
-<p class="eq-note">M：記憶項目集合；D：四個可多重標記的語義領域；IR：身份與關係；SC：狀態與情境；G：來源、證據、時間、範圍、同意及生命週期等治理資訊。</p>
-<p>此表示不要求每位使用者都填滿所有領域，也不假設每個領域都能被完整建模。資料可以稀疏、信心不同、互相矛盾或隨時間改變；模型必須保留這些狀態，而不是把不確定資訊強行壓縮成單一 persona。</p>
+<p class="eq-note">M: the set of memory items; D: the four semantic domains, which may be multi-labeled; IR: Identity &amp; Relationships; SC: State &amp; Context; G: governance metadata such as provenance, evidence, time, scope, consent, and lifecycle.</p>
+<p>This representation does not require every domain to be populated. Information may be sparse, uncertain, contradictory, or time-varying. The model should preserve those conditions rather than compressing uncertain material into a single persona description.</p>
 </section>
 <section id="twins">
-<h2>Primary、Scenario 與 Fusion：全域、場景與多方任務組合</h2>
-<p>個人智慧的結構需要同時處理單一使用者的全域一致性、場景差異，以及多個獨立 Twin 的合作需求。本文將這三種責任分開，不把它們當成同一種「合併」操作。</p>
+<h2>Primary, Scenario, and Fusion: Global, contextual, and multi-party structure</h2>
+<p>The structure of personal intelligence must address global coherence for one person, contextual differences, and collaboration among independent Twins. These are separate responsibilities and should not be treated as one undifferentiated merging operation.</p>
 <div class="diagram"><div class="diagram-title">Figure 1 · Three complementary structural roles</div>
-<svg aria-label="兩個各自受治理的 Twin 參與者先獨立通過 PBIP 授權判定，再將允許的投影組合為 Fusion" role="img" viewbox="0 0 900 440" width="100%">
-<text fill="#62727a" font-size="11" font-weight="700" letter-spacing="1.2" text-anchor="middle" x="450" y="22">獨立 Twin 參與者</text>
-<rect fill="#fff" height="76" rx="8" stroke="#aebfc5" width="340" x="55" y="42"></rect><text fill="#176d7c" font-size="13" font-weight="700" text-anchor="middle" x="225" y="69">參與者 A</text><text fill="#26343c" font-size="12" text-anchor="middle" x="225" y="94">Primary Twin ＋已授權的 Scenario 視圖</text>
-<rect fill="#fff" height="76" rx="8" stroke="#aebfc5" width="340" x="505" y="42"></rect><text fill="#176d7c" font-size="13" font-weight="700" text-anchor="middle" x="675" y="69">參與者 B</text><text fill="#26343c" font-size="12" text-anchor="middle" x="675" y="94">Primary Twin ＋已授權的 Scenario 視圖</text>
+<svg aria-label="Two independently governed Twin participants pass separate PBIP authorization decisions before their permitted projections are composed in Fusion" role="img" viewbox="0 0 900 440" width="100%">
+<text fill="#62727a" font-size="11" font-weight="700" letter-spacing="1.2" text-anchor="middle" x="450" y="22">INDEPENDENT TWIN PARTICIPANTS</text>
+<rect fill="#fff" height="76" rx="8" stroke="#aebfc5" width="340" x="55" y="42"></rect><text fill="#176d7c" font-size="13" font-weight="700" text-anchor="middle" x="225" y="69">PARTICIPANT A</text><text fill="#26343c" font-size="12" text-anchor="middle" x="225" y="94">Primary Twin + authorized Scenario view</text>
+<rect fill="#fff" height="76" rx="8" stroke="#aebfc5" width="340" x="505" y="42"></rect><text fill="#176d7c" font-size="13" font-weight="700" text-anchor="middle" x="675" y="69">PARTICIPANT B</text><text fill="#26343c" font-size="12" text-anchor="middle" x="675" y="94">Primary Twin + authorized Scenario view</text>
 <path d="M225 118 V157 M675 118 V157" fill="none" stroke="#168ba0" stroke-width="2"></path>
-<text fill="#176d7c" font-size="11" font-weight="700" text-anchor="middle" x="450" y="145">PBIP 對每位資料主體分別判定</text>
-<rect fill="#f3f7f8" height="70" rx="8" stroke="#cbd8dc" width="340" x="55" y="170"></rect><text fill="#176d7c" font-size="13" font-weight="700" text-anchor="middle" x="225" y="197">PBIP · 參與者 A</text><text fill="#37464e" font-size="11" text-anchor="middle" x="225" y="219">目的 · 範圍 · 時間 · 同意 · 最小必要</text>
-<rect fill="#f3f7f8" height="70" rx="8" stroke="#cbd8dc" width="340" x="505" y="170"></rect><text fill="#176d7c" font-size="13" font-weight="700" text-anchor="middle" x="675" y="197">PBIP · 參與者 B</text><text fill="#37464e" font-size="11" text-anchor="middle" x="675" y="219">目的 · 範圍 · 時間 · 同意 · 最小必要</text>
+<text fill="#176d7c" font-size="11" font-weight="700" text-anchor="middle" x="450" y="145">PBIP IS EVALUATED SEPARATELY FOR EACH DATA SUBJECT</text>
+<rect fill="#f3f7f8" height="70" rx="8" stroke="#cbd8dc" width="340" x="55" y="170"></rect><text fill="#176d7c" font-size="13" font-weight="700" text-anchor="middle" x="225" y="197">PBIP · PARTICIPANT A</text><text fill="#37464e" font-size="11" text-anchor="middle" x="225" y="219">Purpose · Scope · Time · Consent · Minimum necessary</text>
+<rect fill="#f3f7f8" height="70" rx="8" stroke="#cbd8dc" width="340" x="505" y="170"></rect><text fill="#176d7c" font-size="13" font-weight="700" text-anchor="middle" x="675" y="197">PBIP · PARTICIPANT B</text><text fill="#37464e" font-size="11" text-anchor="middle" x="675" y="219">Purpose · Scope · Time · Consent · Minimum necessary</text>
 <path d="M225 240 V270 H450 V298 M675 240 V270 H450" fill="none" stroke="#168ba0" stroke-width="2"></path>
-<rect fill="#26343d" height="74" rx="8" width="440" x="230" y="298"></rect><text fill="#fff" font-size="14" font-weight="700" text-anchor="middle" x="450" y="328">FUSION 任務視圖</text><text fill="#d7e2e6" font-size="11" text-anchor="middle" x="450" y="350">任務限定組合 · 不建立永久融合記憶</text>
-<path d="M450 372 V398" stroke="#168ba0" stroke-width="2"></path><rect fill="#f3f7f8" height="30" rx="5" stroke="#cbd8dc" width="270" x="315" y="398"></rect><text fill="#26343c" font-size="11" text-anchor="middle" x="450" y="418">獲授權的下游任務</text>
-</svg>
-<p class="figure-caption">圖 1. A 與 B 為示意的獨立參與者 Twin；每位資料主體均須各自通過 PBIP 授權判定，Fusion 僅組合各方允許交付的部分。此模式可擴展至兩位以上參與者。</p></div>
-<h3>4.1 Primary Twin：每人一個全域個人智慧基礎</h3>
-<p>Primary Twin 是一個人跨場景的主要個人智慧模型，每位使用者原則上只有一個。它不必保存所有應用的原始資料，也不應把所有場景混成無差別摘要；它維護具來源、時間與範圍的個人智慧項目，並按任務提供相關部分。</p>
-<h3>4.2 Scenario Twin：同一個人的場景專化</h3>
-<p>Scenario Twin 可對應特定品牌、職業、專業領域、專案、客戶關係或持續工作情境。它由 Primary Twin 中相關且獲授權的個人智慧投影，加上場景專屬知識、規則、目標、狀態與歷史組成。Scenario Twin 不是另一個完整個人，也不應複製整份 Primary Twin。</p>
+<rect fill="#26343d" height="74" rx="8" width="440" x="230" y="298"></rect><text fill="#fff" font-size="14" font-weight="700" text-anchor="middle" x="450" y="328">FUSION VIEW</text><text fill="#d7e2e6" font-size="11" text-anchor="middle" x="450" y="350">Task-scoped composition · no permanent merged memory</text>
+<path d="M450 372 V398" stroke="#168ba0" stroke-width="2"></path><rect fill="#f3f7f8" height="30" rx="5" stroke="#cbd8dc" width="270" x="315" y="398"></rect><text fill="#26343c" font-size="11" text-anchor="middle" x="450" y="418">Authorized downstream task</text>
+</svg><p class="figure-caption">Figure 1. A and B represent independently governed participant Twins. Each data subject receives a separate PBIP authorization decision, and Fusion composes only the portions each participant permits. The pattern can extend to more than two participants.</p></div>
+<h3>Primary Twin: one global foundation for each person</h3>
+<p>Within this framework, each person has one Primary Twin as the global personal-intelligence model across contexts. It need not store every application's raw data and should not collapse all contexts into one undifferentiated summary. It maintains personal-intelligence items with provenance, time, and scope, then supplies relevant subsets according to an authorized task.</p>
+<h3>Scenario Twin: specialization within a defined context</h3>
+<p>A Scenario Twin may correspond to a brand, profession, specialist domain, project, client relationship, or continuing work context. It combines relevant and authorized projections from the Primary Twin with scenario-specific knowledge, rules, goals, state, and history. It is not another complete person and should not duplicate the entire Primary Twin.</p>
 <div class="formula">ScenarioTwin<sub>u,s</sub>(t) = View(PrimaryTwin<sub>u</sub>, AuthorizedScope<sub>s</sub>) ⊕ ScenarioData<sub>s</sub></div>
-<p>符號 ⊕ 表示受規則管理的場景組合，而非將資料無條件合併。預設情況下，場景內的新觀察只屬於該場景；只有經使用者確認，才可提升為全域個人智慧。對權威記憶而言，Scenario 應優先使用可追溯引用與動態授權視圖，而不是建立另一份需要持續同步的副本。若執行時必須物化資料，該資料應被視為有來源版本與期限的衍生投影，而非新的權威記錄。</p>
-<h3>4.3 Fusion：多個 Twin 在指定任務中的授權組合</h3>
-<p><strong>Fusion</strong> 是由兩個或更多獨立 Twin 在某個明確目的下形成的任務型智慧組合視圖。參與者可以是不同個人的 Twin，也可以是不同場景的 Twin；系統只可納入每個參與者分別授權、且與共同任務相關的智慧。Fusion 管理的是「哪些 Twin 以哪些授權範圍共同參與這項任務」，而不是把多個人的身份或全部記憶合成一個新的永久 Twin。</p>
-<p>Fusion 可為單次任務臨時建立，也可以儲存為可重複使用的組合設定。可保存的設定僅包括參與 Twin、授權範圍、任務目的、角色、策略偏好、政策版本、期限與成員狀態；不應另存一份融合後的完整智慧作為新的權威資料層。任務執行時可能需要短期上下文或快取，但它們是受期限、存取與刪除政策約束的衍生資料，不是獨立的永久 Twin。</p>
-<p>參與者退出或撤回授權時，系統應停止未來交付並重新計算 Fusion View；如有必要，亦應使相關快取或衍生資料失效。不能承諾追回已被參與者閱讀、模型處理或已包含於既有輸出的資訊，因此下游保留、刪除與輸出再利用規則必須預先定義。</p>
-<h3>4.4 三種結構責任不可混淆</h3>
-<div class="table-wrap"><table><thead><tr><th>概念</th><th>管理的問題</th><th>資料與生命週期原則</th></tr></thead><tbody>
-<tr><td>Primary Twin</td><td>一個人的全域個人智慧是什麼？</td><td>單一權威個人模型；由使用者治理與修正</td></tr>
-<tr><td>Scenario Twin</td><td>同一個人在特定情境中如何專化？</td><td>授權引用全域智慧，加上場景專屬資料；避免複製權威記憶</td></tr>
-<tr><td>Fusion</td><td>多個 Twin 如何為指定任務共同提供智慧？</td><td>任務型組合視圖；保存設定而非永久融合記憶</td></tr>
-<tr><td>PBIP</td><td>哪些智慧可以交付給誰、為何種目的與多久？</td><td>逐次執行的授權與最小必要交付控制</td></tr>
+<p>Here, <em>u</em> denotes the person, <em>s</em> the scenario, and <em>t</em> the time of the view. The operator ⊕ denotes a policy-governed contextual composition, not unconditional data merging. New observations made within a scenario remain local by default; they become global personal intelligence only after user confirmation. For authoritative memory, the preferred implementation is traceable references and dynamic authorized views rather than another copy requiring continuous synchronization. If runtime materialization is necessary, it is derived data associated with a source version and expiry, not a new authoritative record.</p>
+<h3>Fusion: authorized composition of multiple Twins for a task</h3>
+<p><strong>Fusion</strong> is a task-scoped intelligence view formed from two or more independent Twins for a defined purpose. Participants may be different people's Twins or different Scenario Twins. Only intelligence that each participant separately authorizes and that is relevant to the shared task may be included. Fusion manages which Twins participate, under what scopes, and for which task; it does not merge identities or combine all memories into a new permanent Twin.</p>
+<p>A Fusion may be created for a single task or saved as a reusable composition configuration. The configuration may record participating Twins, authorized scopes, task purpose, roles, policy version, expiry, and participant status. It should not store a duplicate authoritative copy of all fused intelligence. A task may require a short-lived context or cache, but such material is derived data subject to access, expiry, and deletion rules, not a separate permanent intelligence layer.</p>
+<p>When a participant leaves or revokes authorization, the system should stop future delivery and recompute the Fusion view; controlled caches and derived data should be invalidated where required. The system cannot promise to retrieve information already read by a participant, processed by a model, or embedded in an existing output. Downstream retention, deletion, and output-reuse rules must therefore be defined in advance.</p>
+<h3>Distinct responsibilities</h3>
+<div class="table-wrap"><table><thead><tr><th>Concept</th><th>Question managed</th><th>Data and lifecycle principle</th></tr></thead><tbody>
+<tr><td>Primary Twin</td><td>What is the person's global personal intelligence?</td><td>One authoritative personal model, governed and correctable by the individual</td></tr>
+<tr><td>Scenario Twin</td><td>How is the same person's intelligence specialized in a context?</td><td>Authorized references to global intelligence plus scenario data; no duplicate authoritative memory</td></tr>
+<tr><td>Fusion</td><td>How do multiple Twins contribute to a particular task?</td><td>Task-scoped composition view; save configuration, not permanent merged memory</td></tr>
+<tr><td>PBIP</td><td>What intelligence may be delivered, to whom, for what purpose, and for how long?</td><td>Per-request authorization and minimum-necessary projection</td></tr>
 </tbody></table></div>
-<h3>4.5 組織情境的特別處理</h3>
-<p>組織可建立自己的組織模型，用以保存組織目標、流程、制度、知識及決策歷史。成員的 Primary Twin 仍由個人持有；組織只能接收成員明確授權提供的特定資訊或投影，不得因雇傭、團隊成員身份或參與某個 Fusion 就推定可合併私人 Twin。組織模型與個人 Twin 的權利主體、保存責任及退出後處理必須分開。</p>
+<h3>Organizational contexts</h3>
+<p>An organization may maintain its own organizational model for goals, processes, policies, knowledge, and decision history. Members' Primary Twins remain under individual control. The organization may receive only information or projections that members explicitly authorize for defined purposes and scopes. Employment, team membership, or participation in a Fusion does not imply permission to combine private Twin data. Ownership, retention responsibilities, and post-exit handling must remain distinct for organizational models and personal Twins.</p>
 </section>
 <section id="learning">
-<h2>學習架構：從明確表達到經授權的日常經驗</h2>
-<p>個人智慧不能只靠單一資料來源建立。訪談適合理解個人理由與隱性知識；文件適合提供可回查的事實與成果；經授權的連接資料可提供自然形成的工作與互動脈絡；持續反饋則用於檢查模型是否仍符合使用者現況。不同來源的讀取權、學習權、保存權與下游分享權必須分別管理。</p>
-<div class="grid2">
-<div class="card"><h3>Interview · 訪談</h3><p>以具體案例、決策回顧與追問理解個人如何思考、為何選擇及重視什麼。訪談所得仍須區分探索性想法、暫時狀態與已確認的長期立場。</p></div>
-<div class="card"><h3>Knowledge Import · 知識匯入</h3><p>從履歷、作品、報告、筆記與文件提取可追溯資訊。文件出現某項知識，不代表使用者本人已掌握該知識或認同其中主張。</p></div>
-<div class="card"><h3>Connected Sources · 授權連接</h3><p>從使用者選擇的資料來源取得指定帳戶、資料夾、文件、對話、日曆、專案或時間範圍。可存取不等於可學習，更不等於可轉交給其他應用。</p></div>
-<div class="card"><h3>Experience Feedback · 經驗反饋</h3><p>從使用者修正、確認、任務回顧與明確反饋產生候選更新。單次行為可能只是情境要求；高影響的價值觀、目標或性格推論應保持謹慎並由使用者確認。</p></div>
-</div>
-<h3>5.1 三層授權：來源、範圍與用途</h3>
-<ol><li><strong>Source：</strong>選擇資料來源或服務。</li><li><strong>Scope：</strong>選擇帳戶、指定資料夾、文件、對話、聯絡人、專案或時間範圍。</li><li><strong>Purpose：</strong>分別選擇可否讀取、用於 Twin 學習、保存、用於指定場景，以及交付給哪些下游用途。</li></ol>
-<p>郵件、聊天與會議內容須保留作者與參與者歸屬。使用者擁有某份資料的存取權，不代表其中所有第三方資訊都可被永久建模或共享。</p>
-<h3>5.2 訪談應以情境與案例為核心</h3>
-<p>與其詢問「你的決策風格是什麼」，系統更應請使用者回顧一個具體決策：當時有哪些選項、考慮哪些因素、放棄了什麼、結果如何，以及今天是否仍會作出同樣選擇。這種方法能保留推理脈絡，但不能因此把單一案例概括為永久特徵。</p>
-<h3>5.3 來源與認知狀態必須分開</h3>
-<p>來源描述資訊從何而來，例如 Interview、Drive、Mail 或 Run；認知狀態描述系統以何種方式知道，例如 User-stated、Observed、Externally verified 或 Inferred。兩者是不同軸線：一項記憶可以源自訪談且屬使用者自述，也可以源自公開文件且經獨立核實。它們均不應被壓成單一「可信度」標籤。</p>
+<h2>Learning architecture: From explicit statements to authorized experience</h2>
+<p>Personal intelligence cannot be responsibly constructed from a single source type. Interviews can reveal reasons and tacit knowledge; documents provide traceable statements and work products; authorized connections may provide naturally occurring work and interaction context; ongoing feedback helps determine whether the model remains current. Read access, learning permission, retention permission, and downstream sharing permission should be governed separately.</p>
+<div class="grid2"><div class="card"><h3>Interview</h3><p>Use concrete cases, decision reviews, and follow-up questions to understand how a person reasons, why a choice was made, and what mattered. Distinguish exploratory thoughts, temporary states, and confirmed long-term positions.</p></div><div class="card"><h3>Knowledge import</h3><p>Extract traceable information from résumés, work samples, reports, notes, and documents. The presence of knowledge in a file does not establish that the user personally knows or endorses it.</p></div><div class="card"><h3>Connected sources</h3><p>Retrieve only the accounts, folders, documents, conversations, calendars, projects, or time ranges selected by the user. Access does not automatically imply permission to learn from data or transfer it to another application.</p></div><div class="card"><h3>Experience feedback</h3><p>Use corrections, confirmations, task reviews, and explicit feedback to create candidate updates. A single action may reflect situational constraints; high-impact inferences about values, goals, or personality should remain tentative and require confirmation.</p></div></div>
+<h3>Three authorization dimensions: source, scope, and purpose</h3>
+<ol><li><strong>Source:</strong> select the data source or service.</li><li><strong>Scope:</strong> select the account, folder, document, conversation, contact, project, or time range.</li><li><strong>Purpose:</strong> separately specify whether the data may be read, used for Twin learning, retained, applied to a scenario, or delivered for a named downstream purpose.</li></ol>
+<p>Email, chat, and meeting content must retain author and participant attribution. A user's access to a source does not mean that all third-party information within it may be permanently modeled or shared.</p>
+<h3>Interviews should be grounded in cases and context</h3>
+<p>Rather than asking only, “What is your decision-making style?”, the system should invite the person to review a concrete decision: what alternatives were available, which factors mattered, what was rejected, what happened, and whether the person would make the same choice today. This approach can preserve reasoning context, but one case must not be generalized into a permanent trait.</p>
+<h3>Provenance and epistemic status are separate</h3>
+<p>Provenance identifies where information came from, such as Interview, Drive, Mail, or Run. Epistemic status identifies how the system knows it, such as <em>User-stated</em>, <em>Observed</em>, <em>Externally verified</em>, or <em>Inferred</em>. These are independent dimensions. A memory may originate in an interview and be a user's statement; another may originate in a public document and be independently verified. Neither should be compressed into a single generic “trust” label.</p>
 </section>
 <section id="lifecycle">
-<h2>個人智慧生命週期</h2>
-<p>本文提出一個可回溯的循環，將資料擷取、語義解讀、證據檢查、記憶整合、場景專化、目的限定交付及後續修正連在一起。這是系統設計提案，不宣稱為唯一或普遍適用的認知流程。</p>
-<div class="diagram"><div class="diagram-title">Figure 2 · Contact Twin Intelligence Lifecycle</div><div class="flow"><div class="node"><b>1 · Capture</b><small>訪談、文件、授權來源</small></div><div class="node"><b>2 · Interpret</b><small>辨識主張、人物、時間與情境</small></div><div class="node"><b>3 · Validate</b><small>來源、證據、不確定性與衝突</small></div><div class="node"><b>4 · Integrate</b><small>版本化記憶與關係</small></div></div><div style="height:12px"></div><div class="flow"><div class="node"><b>5 · Specialize</b><small>Primary / Scenario 視圖</small></div><div class="node"><b>6 · Compose / Serve</b><small>Fusion 與目的限定交付</small></div><div class="node"><b>7 · Reflect</b><small>結果、修正與新證據</small></div><div class="node"><b>8 · Evolve</b><small>更新、降級、到期或刪除</small></div></div><p class="figure-caption">圖 2. Fusion 是由授權投影形成的任務組合，不是建立永久融合記憶的步驟。</p></div>
-<h3>6.1 Capture 與 Interpret</h3><p>系統記錄原始來源及必要引用，識別主張、事件、偏好、目標、人物與場景。對話或文件中的發言者、作者與被描述對象應可區分。解讀結果先成為候選記憶，不立即成為穩定個人特徵。</p>
-<h3>6.2 Validate 與 Integrate</h3><p>每項重要記憶保留證據、認知狀態、信心、不確定性及可能反證。整合過程包括去重、實體關聯、矛盾處理、版本化與時間有效性。新資訊可以取代舊資訊，但不應抹除仍具解釋價值的歷史脈絡；若涉及敏感或要求刪除的資料，則依適用政策處理。</p>
-<h3>6.3 Specialize 與 Compose</h3><p>Primary Twin 提供全域基礎，Scenario Twin 只取得授權且相關的部分，並加入場景資料。當任務需要多個 Twin 時，Fusion 透過 PBIP 取得參與者個別授權的投影，產生任務限定視圖。兩種操作都不改變原始 Twin 的權威資料歸屬。</p>
-<h3>6.4 Serve、Reflect 與 Evolve</h3><p>下游應用只取得任務所需的投影。Answer 的修正、Run 的任務成果與使用者明確反饋可以形成候選更新，但是否寫入 Primary Twin 或留在特定 Scenario，必須根據來源、時間、範圍與使用者確認決定。任務輸出不應自動變成使用者身份或信念。</p>
+<h2>The personal-intelligence lifecycle</h2>
+<p>The framework proposes a traceable cycle linking acquisition, semantic interpretation, evidence review, memory integration, contextual specialization, purpose-bound delivery, and subsequent correction. This is a system-design proposal, not a claim that all cognition follows one universal sequence.</p>
+<div class="diagram"><div class="diagram-title">Figure 2 · Contact Twin intelligence lifecycle</div><div class="flow"><div class="node"><b>Capture</b><small>Interviews, documents, authorized sources</small></div><div class="node"><b>Interpret</b><small>Claims, people, time, and context</small></div><div class="node"><b>Validate</b><small>Sources, evidence, uncertainty, conflicts</small></div><div class="node"><b>Integrate</b><small>Versioned memories and relationships</small></div></div><div style="height:12px"></div><div class="flow"><div class="node"><b>Specialize</b><small>Primary and Scenario views</small></div><div class="node"><b>Compose / Serve</b><small>Fusion and purpose-bound delivery</small></div><div class="node"><b>Reflect</b><small>Outcomes, corrections, new evidence</small></div><div class="node"><b>Evolve</b><small>Update, downgrade, expire, or delete</small></div></div><p class="figure-caption">Figure 2. Fusion composes authorized projections for a task; it is not a stage that creates permanent merged memory.</p></div>
+<h3>Capture and interpret</h3><p>The system records source references and identifies claims, events, preferences, goals, people, and scenarios. It must distinguish the speaker, author, and subject described in a conversation or document. Interpretations initially become candidate memories rather than established personal characteristics.</p>
+<h3>Validate and integrate</h3><p>Important memories retain evidence, epistemic status, confidence, uncertainty, and possible counter-evidence. Integration may involve deduplication, entity linking, conflict handling, versioning, and temporal validity. New information may supersede older information without erasing historical context that remains explanatory. Sensitive or deletion-requested information must be handled under the applicable policy.</p>
+<h3>Specialize and compose</h3><p>The Primary Twin provides the global foundation. A Scenario Twin receives only relevant authorized information and adds scenario data. When a task requires multiple Twins, Fusion obtains separately authorized projections through PBIP and forms a task-scoped view. Neither operation changes the authoritative ownership of the source Twins.</p>
+<h3>Serve, reflect, and evolve</h3><p>Downstream applications receive only the projection necessary for the task. Corrections from Answer, outcomes from Run, and explicit user feedback may generate candidate updates. Whether an update belongs in the Primary Twin or should remain within a Scenario must depend on source, time, scope, and user confirmation. A task output should not automatically become part of a person's identity or beliefs.</p>
 </section>
 <section id="system">
-<h2>系統架構與 PBIP 操作契約</h2>
-<p>Contact Twin 的參考架構將資料來源、證據與記憶、Twin 結構、政策判定、交付與稽核分離。下游應用不直接讀取完整個人資料庫；所有個人智慧交付均須通過目的與權限判定。</p>
-<div class="diagram"><div class="diagram-title">Figure 3 · Reference Architecture</div>
-<svg aria-label="Reference architecture showing source evidence, intelligence stores, Twin structure, PBIP policy gate, Fusion and applications" role="img" viewbox="0 0 900 560" width="100%">
-<rect fill="#152b39" height="55" rx="10" width="750" x="75" y="12"></rect><text fill="#00cfee" font-size="12" font-weight="700" text-anchor="middle" x="450" y="35">LEARNING SOURCES</text><text fill="#fff" font-size="12" text-anchor="middle" x="450" y="54">Interview · Import · Authorized Data Connections · User Feedback</text>
-<path d="M450 67 V88" stroke="#00aac5" stroke-width="2"></path>
-<rect fill="#eaf8fb" height="62" rx="10" stroke="#b9e6ed" width="750" x="75" y="88"></rect><text fill="#00788e" font-size="12" font-weight="700" text-anchor="middle" x="450" y="113">PROVENANCE &amp; EVIDENCE LAYER</text><text fill="#29414e" font-size="12" text-anchor="middle" x="450" y="134">Author · Source · Evidence · Epistemic Status · Time · Scope · Consent</text>
-<path d="M450 150 V172" stroke="#00aac5" stroke-width="2"></path>
+<h2>Reference architecture and the PBIP contract</h2>
+<p>The reference architecture separates source connections, evidence and memory, Twin structure, policy decisions, delivery, and audit. Downstream applications do not directly read the complete personal data store. Delivery of personal intelligence must pass through purpose and authorization checks. In a multi-party Fusion, PBIP is evaluated independently for each data subject; Fusion receives only the projections each participant separately authorizes.</p>
+<div class="diagram"><div class="diagram-title">Figure 3 · Reference architecture</div>
+<svg aria-label="Reference architecture: learning sources, provenance, personal intelligence, Twins, PBIP, Fusion and applications" role="img" viewbox="0 0 900 560" width="100%">
+<rect fill="#152b39" height="55" rx="10" width="750" x="75" y="12"></rect><text fill="#00cfee" font-size="12" font-weight="700" text-anchor="middle" x="450" y="35">LEARNING SOURCES</text><text fill="#fff" font-size="12" text-anchor="middle" x="450" y="54">Interview · Import · Authorized Data Connections · User Feedback</text><path d="M450 67 V88" stroke="#00aac5" stroke-width="2"></path>
+<rect fill="#eaf8fb" height="62" rx="10" stroke="#b9e6ed" width="750" x="75" y="88"></rect><text fill="#00788e" font-size="12" font-weight="700" text-anchor="middle" x="450" y="113">PROVENANCE &amp; EVIDENCE LAYER</text><text fill="#29414e" font-size="12" text-anchor="middle" x="450" y="134">Author · Source · Evidence · Epistemic Status · Time · Scope · Consent</text><path d="M450 150 V172" stroke="#00aac5" stroke-width="2"></path>
 <rect fill="#fff" height="88" rx="10" stroke="#cbdde3" width="750" x="75" y="172"></rect><text fill="#00788e" font-size="12" font-weight="700" text-anchor="middle" x="450" y="196">PERSONAL INTELLIGENCE MODEL</text>
 <rect fill="#eef5f7" height="35" rx="6" width="165" x="100" y="210"></rect><text fill="#243d4a" font-size="10" text-anchor="middle" x="182" y="232">Knowledge &amp; Experience</text><rect fill="#eef5f7" height="35" rx="6" width="165" x="280" y="210"></rect><text fill="#243d4a" font-size="10" text-anchor="middle" x="362" y="232">Thinking &amp; Judgment</text><rect fill="#eef5f7" height="35" rx="6" width="165" x="460" y="210"></rect><text fill="#243d4a" font-size="10" text-anchor="middle" x="542" y="232">Values &amp; Goals</text><rect fill="#eef5f7" height="35" rx="6" width="160" x="640" y="210"></rect><text fill="#243d4a" font-size="10" text-anchor="middle" x="720" y="232">Personality &amp; Preferences</text>
-<path d="M450 260 V282" stroke="#00aac5" stroke-width="2"></path>
-<rect fill="#eaf8fb" height="58" rx="10" stroke="#b9e6ed" width="750" x="75" y="282"></rect><text fill="#00788e" font-size="12" font-weight="700" text-anchor="middle" x="450" y="305">TWIN STRUCTURE</text><text fill="#29414e" font-size="12" text-anchor="middle" x="450" y="326">Primary Twin · Scenario Twins · Independent Participant Twins</text>
-<path d="M450 340 V362" stroke="#00aac5" stroke-width="2"></path>
-<rect fill="#152b39" height="66" rx="10" width="750" x="75" y="362"></rect><text fill="#00cfee" font-size="12" font-weight="700" text-anchor="middle" x="450" y="388">PBIP · POLICY DECISION &amp; PROJECTION</text><text fill="#fff" font-size="11" text-anchor="middle" x="450" y="411">Purpose · Participant · Scope · Operation · Time · Consent · Minimum Necessary</text>
-<path d="M450 428 V451 M240 451 H660 M240 451 V469 M450 451 V469 M660 451 V469" fill="none" stroke="#00aac5" stroke-width="2"></path>
-<rect fill="#fff" height="48" rx="8" stroke="#b9dfe7" width="280" x="100" y="469"></rect><text fill="#1e3a48" font-size="12" font-weight="700" text-anchor="middle" x="240" y="489">Fusion Composer</text><text fill="#657783" font-size="10" text-anchor="middle" x="240" y="506">Task-scoped composition view</text>
-<rect fill="#fff" height="48" rx="8" stroke="#b9dfe7" width="370" x="415" y="469"></rect><text fill="#1e3a48" font-size="12" font-weight="700" text-anchor="middle" x="600" y="489">Authorized Applications</text><text fill="#657783" font-size="10" text-anchor="middle" x="600" y="506">Answer · Run · Other downstream applications</text>
-<path d="M240 517 V535 M600 517 V535 M240 535 H600" fill="none" stroke="#00aac5" stroke-width="1.5"></path><rect fill="#eaf8fb" height="24" rx="6" width="340" x="250" y="535"></rect><text fill="#00788e" font-size="10" font-weight="700" text-anchor="middle" x="420" y="552">AUDIT · REVOCATION · RETENTION · LIFECYCLE</text>
-</svg><p class="figure-caption">圖 3. PBIP 是智慧交付的控制點；Fusion Composer 僅組合通過政策判定的投影。稽核與生命週期服務橫跨整個資料流。</p></div>
-<h3>7.1 核心元件</h3>
-<div class="table-wrap"><table><thead><tr><th>元件</th><th>責任</th><th>關鍵要求</th></tr></thead><tbody>
-<tr><td>Source Connectors</td><td>連接訪談、文件與授權來源</td><td>可辨識來源、作者、範圍與連接狀態</td></tr>
-<tr><td>Evidence &amp; Provenance Store</td><td>保存記憶與來源證據關聯</td><td>不可將推論偽裝成自述或外部事實</td></tr>
-<tr><td>Personal Intelligence Model</td><td>組織四大領域與橫向資訊</td><td>支援多重標記、衝突與版本</td></tr>
-<tr><td>Twin Manager</td><td>管理 Primary、Scenario 與 Twin 授權關係</td><td>保留權威來源，不因專化建立重複主檔</td></tr>
-<tr><td>Policy Decision / PBIP</td><td>判斷並產生目的限定投影</td><td>拒絕未定目的、過期授權或超出範圍的請求</td></tr>
-<tr><td>Fusion Composer</td><td>組合多個獲授權的 Twin 投影</td><td>保留參與者來源、獨立權限與退出狀態</td></tr>
-<tr><td>Audit &amp; Lifecycle Service</td><td>記錄存取、更新、撤權、刪除與匯出</td><td>可追溯、可檢查與可執行資料生命週期政策</td></tr>
+<path d="M450 260 V282" stroke="#00aac5" stroke-width="2"></path><rect fill="#eaf8fb" height="58" rx="10" stroke="#b9e6ed" width="750" x="75" y="282"></rect><text fill="#00788e" font-size="12" font-weight="700" text-anchor="middle" x="450" y="305">TWIN STRUCTURE</text><text fill="#29414e" font-size="12" text-anchor="middle" x="450" y="326">Primary Twin · Scenario Twins · Independent Participant Twins</text>
+<path d="M450 340 V362" stroke="#00aac5" stroke-width="2"></path><rect fill="#152b39" height="66" rx="10" width="750" x="75" y="362"></rect><text fill="#00cfee" font-size="12" font-weight="700" text-anchor="middle" x="450" y="388">PBIP · POLICY DECISION &amp; PROJECTION</text><text fill="#fff" font-size="11" text-anchor="middle" x="450" y="411">Purpose · Participant · Scope · Operation · Time · Consent · Minimum Necessary</text>
+<path d="M450 428 V451 M240 451 H660 M240 451 V469 M450 451 V469 M660 451 V469" fill="none" stroke="#00aac5" stroke-width="2"></path><rect fill="#fff" height="48" rx="8" stroke="#b9dfe7" width="280" x="100" y="469"></rect><text fill="#1e3a48" font-size="12" font-weight="700" text-anchor="middle" x="240" y="489">Fusion Composer</text><text fill="#657783" font-size="10" text-anchor="middle" x="240" y="506">Task-scoped composition view</text><rect fill="#fff" height="48" rx="8" stroke="#b9dfe7" width="370" x="415" y="469"></rect><text fill="#1e3a48" font-size="12" font-weight="700" text-anchor="middle" x="600" y="489">Authorized Applications</text><text fill="#657783" font-size="10" text-anchor="middle" x="600" y="506">Answer · Run · Other downstream applications</text><path d="M240 517 V535 M600 517 V535 M240 535 H600" fill="none" stroke="#00aac5" stroke-width="1.5"></path><rect fill="#eaf8fb" height="24" rx="6" width="340" x="250" y="535"></rect><text fill="#00788e" font-size="10" font-weight="700" text-anchor="middle" x="420" y="552">AUDIT · REVOCATION · RETENTION · LIFECYCLE</text>
+</svg><p class="figure-caption">Figure 3. PBIP is the delivery control point. Fusion composes only projections that pass policy checks. Audit and lifecycle services apply across the data flow.</p></div>
+<h3>Core components</h3>
+<div class="table-wrap"><table><thead><tr><th>Component</th><th>Responsibility</th><th>Key requirement</th></tr></thead><tbody>
+<tr><td>Source connectors</td><td>Connect interviews, documents, and authorized sources</td><td>Identify source, author, scope, and connection state</td></tr><tr><td>Evidence and provenance store</td><td>Maintain links between memories and source evidence</td><td>Do not present inference as user statement or external fact</td></tr><tr><td>Personal intelligence model</td><td>Organize four domains and cross-cutting context</td><td>Support multiple labels, conflicts, and versions</td></tr><tr><td>Twin manager</td><td>Manage Primary, Scenario, and Twin authorization relationships</td><td>Preserve authoritative sources; avoid duplicate master records</td></tr><tr><td>Policy decision / PBIP</td><td>Decide and create purpose-bound projections</td><td>Reject undefined purposes, expired permissions, and out-of-scope requests</td></tr><tr><td>Fusion composer</td><td>Compose projections authorized by multiple Twins</td><td>Retain participant provenance, separate permissions, and exit state</td></tr><tr><td>Audit and lifecycle service</td><td>Record access, updates, revocation, deletion, and export</td><td>Make lifecycle policy traceable, inspectable, and enforceable</td></tr>
 </tbody></table></div>
-<h3>7.2 PBIP：Purpose-Bound Intelligence Projection</h3>
-<p>PBIP 是本文提出的個人智慧交付架構與操作契約。它將個人智慧模型與下游應用之間的交付表示為一項受政策約束的投影，而不是讓應用直接讀取完整 Twin。每次投影都應指定請求應用、任務目的、資料主體、目標場景、允許操作、資料範圍、有效期間及同意狀態。</p>
+<h3>PBIP: Purpose-Bound Intelligence Projection</h3>
+<p>PBIP is proposed as an architectural delivery model and operational contract for personal intelligence. It represents the interface between a personal-intelligence model and a downstream application as a policy-governed projection, rather than allowing the application to read the complete Twin. Each projection should identify the requesting application, task purpose, data subject, target scenario, permitted operations, data scope, validity period, and consent state.</p>
 <div class="formula">PBIP(u, a, q, t) = SelectMin { m ∈ PI<sub>u</sub>(t) | R(m, a, q, t) = allow }</div>
-<p class="eq-note">符號定義：u 為個人智慧的資料主體；a 為請求投影的下游應用；q 為具體任務請求，並包含其目的與所需範圍；t 為判定時點；m 為個人智慧中的單一記憶項目；R 為政策判定函數；allow 表示該項目通過政策判定。PI<sub>u</sub>(t) 是使用者 u 在時間 t 的個人智慧集合。SelectMin 表示在滿足任務必要性與授權條件的候選項目中，選取揭露量最小的集合。此式是架構層的操作表示，不是已證明的最佳化演算法；實作仍須定義任務充分性、揭露量及政策衝突的可測量方式。</p>
-<p>PBIP 的價值主張不是發明目的限制、資料最小化或屬性式存取控制，而是將這些相鄰原則應用於「個人智慧作為可被組合與交付的語義資產」這個系統邊界。PBIP 本身不是密碼學協議、通用存取控制標準或已證明安全的實作；其差異化程度與有效性仍須和既有控制模型比較。</p>
-<h3>7.3 撤權的技術邊界</h3>
-<p>撤權可以停止未來讀取與新的投影請求，並要求下游依約使快取、索引及衍生資料失效或刪除；但撤權不能保證追回已被人閱讀、已被模型處理或已進入既有輸出的資訊。因此系統不得把「可撤回」描述成對已揭露內容的物理召回。投影應有期限、接收方義務、資料保留政策與可稽核的撤權事件；對不能刪除的法定或安全稽核記錄，應盡可能只保留必要的最小中繼資料。</p>
-<h3>7.4 不綁定模型，並維持人可理解性</h3>
-<p>個人智慧的資料結構、來源追溯與治理政策應與單一模型供應商分離。模型可以解讀投影，但不能因此成為個人智慧的唯一所有者。使用者應能以自然語言檢視與修正重要記憶，系統也應保留機器可處理的結構化中繼資料。</p>
+<p class="eq-note">Here, <em>u</em> is the subject of the personal intelligence; <em>a</em> is the requesting downstream application; <em>q</em> is the task request, including its purpose and required scope; <em>t</em> is the decision time; <em>m</em> is an individual memory item; and <em>R</em> is the policy-decision function. <em>allow</em> denotes a successful policy decision. <em>PI<sub>u</sub>(t)</em> is the subject's personal-intelligence set at time <em>t</em>. <em>SelectMin</em> selects the least-disclosing set among items that satisfy task necessity and authorization. This is an architectural expression, not a proven optimization algorithm; an implementation must define measurable task sufficiency, disclosure cost, and policy-conflict handling.</p>
+<p>The value claim of PBIP is not that it invents purpose limitation, data minimization, or attribute-based access control. Its proposed contribution is to apply related principles at the system boundary where personal intelligence is composed and delivered as semantic information. PBIP is not a cryptographic protocol, a universal access-control standard, or a security implementation already shown to be safe. Its incremental value must be evaluated against existing policy and access-control models.</p>
+<h3>Technical limits of revocation</h3>
+<p>Revocation can stop future reads and projection requests and can require downstream systems to invalidate or delete controlled caches, indexes, and derived data according to agreed rules. It cannot guarantee retrieval of information already read by a person, processed by a model, or included in an existing output. A system must not describe revocation as physical recall of information already disclosed. Projections should have expiry, recipient obligations, retention rules, and auditable revocation events. Where legal or security audit records cannot be deleted, only the minimum necessary metadata should be retained where possible.</p>
+<h3>Model independence and human understandability</h3>
+<p>The data structure, provenance, and governance policies for personal intelligence should remain independent of any single model provider. A model may interpret a projection, but it does not thereby become the owner of the underlying personal intelligence. Users should be able to inspect and correct important memories in understandable language, while the system preserves structured metadata for machine processing.</p>
 </section>
 <section id="products">
-<h2>應用邊界：理解、分析與執行的分工</h2>
-<p>本節以 Contact 的應用作為架構示例，而不是產品規格或商業定位宣傳。不同應用可以使用同一個 Twin 基礎，但其任務、工具權限與責任必須分開。</p>
-<div class="grid2">
-<div class="card"><h3>Twin</h3><p>建立、整理、檢視與修正個人智慧；提出候選理解，保留來源及不確定性。Twin 不應因保存個人智慧而自動取得外部行動權。</p></div>
-<div class="card"><h3>Answer</h3><p>處理需要分析、比較、證據檢查或綜合判斷的請求。可使用獲授權的 Twin 投影，但不因此取得持續任務或外部執行權。</p></div>
-<div class="card"><h3>Run</h3><p>處理已授權的任務計畫、工具調用、排程、監控與成果交付。任務結果可成為 Twin 的候選學習訊號，但不應自動改寫使用者的全域身份或價值觀。</p></div>
-<div class="card"><h3>Context &amp; Engine</h3><p>Context 管理記憶、關係及任務脈絡；Engine 負責模型路由、推理、驗證與合成。它們是共享基礎服務，不是要求使用者理解的額外產品層。</p></div>
-</div>
-<h3>8.1 跨應用互動契約</h3>
-<div class="table-wrap"><table><thead><tr><th>使用者意圖</th><th>主要能力</th><th>不得默默發生的事</th></tr></thead><tbody>
-<tr><td>讓系統逐步理解我、整理我的經驗</td><td>訪談、匯入、檢視與更正個人智慧</td><td>未經授權執行外部任務</td></tr>
-<tr><td>取得分析、比較或可靠答案</td><td>推理、查證、綜合及必要時專家覆核</td><td>未經確認建立持續任務或操作外部帳戶</td></tr>
-<tr><td>委託系統持續完成一項工作</td><td>計畫、執行、排程、監控與交付</td><td>把任務指令視為無限制存取整份 Twin 的許可</td></tr>
+<h2>Application boundaries: Separate understanding, analysis, and execution</h2>
+<p>This section uses Contact applications as an architectural example, not as a product specification or commercial claim. Different applications may use the same Twin foundation, but their tasks, tool permissions, and responsibilities should remain distinct.</p>
+<div class="grid2"><div class="card"><h3>Twin · Maintain understanding</h3><p>Build, organize, inspect, and correct personal intelligence. Present candidate interpretations with their provenance and uncertainty. Maintaining personal intelligence does not itself grant authority to take external actions.</p></div><div class="card"><h3>Answer · Analyze and verify</h3><p>Handle requests requiring analysis, comparison, evidence checks, or synthesis. Answer may use an authorized Twin projection, but does not thereby receive persistent-task or external-execution authority.</p></div><div class="card"><h3>Run · Delegate and execute</h3><p>Handle authorized task plans, tool calls, scheduling, monitoring, and delivery. Task outcomes may become candidate learning signals for the Twin, but should not silently rewrite global identity or values.</p></div><div class="card"><h3>Context and Engine · Shared infrastructure</h3><p>Context manages memory, relationships, and task context. Engine provides model routing, reasoning, verification, and synthesis. These are shared infrastructure services, not additional conceptual layers users must manage.</p></div></div>
+<h3>Cross-application interaction contract</h3>
+<div class="table-wrap"><table><thead><tr><th>User intent</th><th>Primary capability</th><th>What must not happen silently</th></tr></thead><tbody>
+<tr><td>Help the system understand me and organize my experience</td><td>Interview, import, inspect, and correct personal intelligence</td><td>Execute an external task without authorization</td></tr><tr><td>Obtain analysis, comparison, or a reliable answer</td><td>Reason, verify, synthesize, and request expert review when appropriate</td><td>Create a persistent task or operate an external account without confirmation</td></tr><tr><td>Delegate continuing work</td><td>Plan, execute, schedule, monitor, and deliver</td><td>Treat a task instruction as unlimited permission to access the entire Twin</td></tr>
 </tbody></table></div>
-<p>跨應用轉交可以攜帶原始請求與必要附件，但每個接收應用仍必須經過 PBIP 的目的與權限判定。共享理解不等於共享操作權；任務完成也不代表產生永久的個人記憶更新。</p>
+<p>Cross-application handoff may carry the original request and necessary attachments, but each receiving application must still pass through PBIP purpose and authorization checks. Shared understanding does not imply shared operational authority; task completion does not automatically create a permanent memory update.</p>
 </section>
 <section id="governance">
-<h2>治理與信任：權限、來源及責任邊界</h2>
-<p>個人智慧越完整，錯誤歸因、過時資訊、第三方資料處理與跨場景揭露的風險越高。治理條件必須從資料進入模型時就存在，並延續到專化、Fusion 與下游交付，而不是僅作為事後的使用者設定。</p>
-<h3>9.1 每項重要記憶應保留的欄位</h3>
-<div class="table-wrap"><table><thead><tr><th>欄位</th><th>用途</th></tr></thead><tbody>
-<tr><td>Claim / Content</td><td>可供人閱讀及機器檢索的記憶主張</td></tr><tr><td>Dimension</td><td>四大語義領域，可多重關聯</td></tr><tr><td>Source / Author</td><td>來源服務、文件與實際發言者或作者</td></tr><tr><td>Evidence Reference</td><td>可回查的原始資料位置或證據</td></tr><tr><td>Epistemic Status</td><td>User-stated、Observed、Externally verified 或 Inferred</td></tr><tr><td>Confidence / Uncertainty</td><td>信心程度、未知事項與反證</td></tr><tr><td>Time Validity</td><td>建立、生效、失效或取代時間</td></tr><tr><td>Scope / Relationships</td><td>個人、角色、人物、專案、Scenario 或 Fusion 範圍</td></tr><tr><td>Consent / Purpose</td><td>允許學習、保存、專化、交付及接收方用途</td></tr><tr><td>Lifecycle / Retention</td><td>候選、確認、取代、封存、刪除與保存期限</td></tr>
+<h2>Governance and trust: Permissions, provenance, and responsibility</h2>
+<p>The more complete a personal-intelligence model becomes, the greater the risks of mistaken attribution, stale information, third-party data misuse, and cross-context disclosure. Governance must therefore begin when information enters the model and continue through specialization, Fusion, and downstream delivery. It cannot be reduced to a user setting applied after the fact.</p>
+<h3>Fields for important memory items</h3>
+<div class="table-wrap"><table><thead><tr><th>Field</th><th>Purpose</th></tr></thead><tbody>
+<tr><td>Claim / content</td><td>Readable and retrievable memory statement</td></tr><tr><td>Dimension</td><td>One or more of the four semantic domains</td></tr><tr><td>Source / author</td><td>Source service, document, and actual speaker or author</td></tr><tr><td>Evidence reference</td><td>Traceable location of source material or supporting evidence</td></tr><tr><td>Epistemic status</td><td>User-stated, observed, externally verified, or inferred</td></tr><tr><td>Confidence / uncertainty</td><td>Confidence, unknowns, and counter-evidence</td></tr><tr><td>Temporal validity</td><td>Creation, effective, expiry, or supersession time</td></tr><tr><td>Scope / relationships</td><td>Person, role, people, project, Scenario, or Fusion scope</td></tr><tr><td>Consent / purpose</td><td>Permission to learn, retain, specialize, deliver, and use downstream</td></tr><tr><td>Lifecycle / retention</td><td>Candidate, confirmed, superseded, archived, deleted, and retention period</td></tr>
 </tbody></table></div>
-<h3>9.2 核心治理原則</h3>
+<h3>Core governance principles</h3>
 <ol>
-<li><strong>分離授權：</strong>連接資料來源不等於同意學習；讀取、保存、推論、分享及下游使用應按目的分開授權。</li>
-<li><strong>目的限制與最小必要：</strong>每次交付只包含完成指定任務所需且獲准的智慧項目。</li>
-<li><strong>來源與認知狀態透明：</strong>使用者能分辨自述、觀察、外部核實與推論，不把模型推測呈現為本人確認的事實。</li>
-<li><strong>可檢視與更正：</strong>使用者能查看重要理解、來源與推理狀態，並要求修正、降級、排除或刪除。</li>
-<li><strong>可撤權與時間有效：</strong>撤權應阻止未來存取並觸發下游失效流程；過期資訊不得默認繼續有效。</li>
-<li><strong>跨場景與多方隔離：</strong>不同客戶、品牌、專案與參與者的資訊不能因同屬一個人或加入同一 Fusion 而自動共享。</li>
+<li><strong>Separate permissions.</strong> Connecting a source does not imply permission to learn from it. Reading, retention, inference, sharing, and downstream use should be authorized according to distinct purposes.</li>
+<li><strong>Purpose limitation and data minimization.</strong> Each delivery contains only the authorized intelligence items necessary for the specified task.</li>
+<li><strong>Transparent provenance and epistemic status.</strong> Users can distinguish self-reports, observations, external verification, and inference. Model speculation must not be presented as a fact confirmed by the person.</li>
+<li><strong>Inspection and correction.</strong> Users can review important interpretations, sources, and epistemic status and request correction, downgrade, exclusion, or deletion.</li>
+<li><strong>Revocation and temporal validity.</strong> Revocation should prevent future access and trigger downstream invalidation procedures. Expired information must not remain valid by default.</li>
+<li><strong>Cross-context and multi-party isolation.</strong> Information about separate clients, brands, projects, and participants must not be automatically shared merely because it belongs to one person or appears in one Fusion.</li>
 </ol>
-<h3>9.3 Fusion 的多方授權</h3>
-<p>Fusion 的建立者不能替其他參與者授權其私人智慧。每個 Twin 所屬者必須對提供的範圍、任務目的、接收角色與有效期間作出適當同意。若某一來源包含第三方資料，Twin 所屬者的同意亦不必然足以授權所有第三方資訊；系統應依資料性質、關係與適用法律採取排除、遮蔽、摘要或額外授權措施。</p>
-<h3>9.4 組織模型與個人 Twin</h3>
-<p>組織可持有自己的組織智慧模型，但不能把成員的 Primary Twin 當作組織資產。個人對組織提供的資訊應有明確用途與範圍；離職、退出專案或撤回授權時，需有可執行的存取終止、資料處置與稽核機制。</p>
-<h3>9.5 PBIP 與既有治理原則的關係</h3>
-<p>PBIP 與目的限制、資料最小化、情境完整性及 ABAC 等既有方法有明確關係 [10, 11]。本文不把 PBIP 描述為取代它們的全新存取控制標準。PBIP 的研究價值在於是否能將任務目的、Twin 身份、場景範圍、參與者授權、期限與可交付的語義項目組合為可檢查的個人智慧交付契約。</p>
+<h3>Multi-party authorization in Fusion</h3>
+<p>The creator of a Fusion cannot authorize another participant's private intelligence on that participant's behalf. Each Twin owner must appropriately authorize the scope, task purpose, receiving role, and validity period of the information contributed. Where a source contains third-party data, the Twin owner's consent may not be sufficient to authorize all information about those third parties. Depending on the data and applicable law, the system may need to exclude, mask, summarize, or seek additional authorization for that content.</p>
+<h3>Organizational models and personal Twins</h3>
+<p>An organization may own an organizational intelligence model, but it should not treat members' Primary Twins as organizational assets. Information provided by an individual to an organization should have a defined purpose and scope. Departure from employment, exit from a project, or revocation should trigger enforceable access termination, data handling, and audit processes.</p>
+<h3>PBIP in relation to existing governance principles</h3>
+<p>PBIP is related to purpose limitation, data minimization, Contextual Integrity, and ABAC [10, 11]. This paper does not describe it as a new access-control standard that replaces those methods. Its research value depends on whether task purpose, Twin identity, scenario scope, participant authorization, expiry, and deliverable semantic items can be combined into an inspectable contract for personal-intelligence delivery.</p>
 </section>
 <section id="evaluation">
-<h2>評估框架：同時衡量效益與風險</h2>
-<p>個人智慧不能只以記憶數量、檢索命中率、對話次數或使用時間衡量。評估必須同時回答：模型是否準確理解個人、資料能否追溯、不同場景是否隔離、授權能否執行，以及下游任務效益是否足以抵銷新增風險。</p>
-<div class="table-wrap"><table><thead><tr><th>評估面向</th><th>核心指標</th><th>可能方法</th></tr></thead><tbody>
-<tr><td>Personal Understanding</td><td>已確認資訊準確率、錯誤歸因率</td><td>使用者審核的事實與案例測試</td></tr>
-<tr><td>智慧映照品質</td><td>表徵忠實度、證據涵蓋率、時間與情境準確性、不確定性校準、回應使用者更正的能力</td><td>跨時間與情境，比較模型表徵與經使用者確認的個人描述</td></tr>
-<tr><td>Evidence Fidelity</td><td>來源可追溯率、證據支持率、推論標示正確率</td><td>抽樣檢查重要記憶與原始依據</td></tr>
-<tr><td>Temporal Consistency</td><td>過期記憶率、更新準確度、矛盾處理率</td><td>縱向時間案例與版本比較</td></tr>
-<tr><td>Scenario Integrity</td><td>跨場景洩漏率、場景規則衝突率</td><td>以不同客戶、品牌及專案進行隔離測試</td></tr>
-<tr><td>Fusion Integrity</td><td>未授權納入率、參與者撤權成功率、來源保留率</td><td>多參與者任務測試與權限攻防測試</td></tr>
-<tr><td>PBIP Effectiveness</td><td>超額交付率、任務必要資訊覆蓋率、政策拒絕正確率</td><td>比較任務所需資訊與實際投影</td></tr>
-<tr><td>Context Utility</td><td>相關脈絡命中率、無關資料注入率</td><td>由使用者與領域專家評估</td></tr>
-<tr><td>Downstream Outcomes</td><td>答案品質、任務完成率、返工與耗時</td><td>比較不同個人脈絡條件</td></tr>
-<tr><td>User Agency &amp; Trust</td><td>授權理解度、修正成功率、撤權理解度與信任評分</td><td>可用性測試、訪談與情境實驗</td></tr>
+<h2>Evaluation framework: Measure utility and risk together</h2>
+<p>Personal intelligence should not be evaluated solely by memory volume, retrieval hit rate, conversation count, or time spent in a product. Evaluation must also ask whether the model understands the person accurately, whether information is traceable, whether scenarios remain isolated, whether permissions are enforced, and whether downstream task benefits justify the added risk.</p>
+<div class="table-wrap"><table><thead><tr><th>Evaluation dimension</th><th>Core measures</th><th>Possible method</th></tr></thead><tbody>
+<tr><td>Personal understanding</td><td>Accuracy of confirmed information; mistaken-attribution rate</td><td>User-reviewed factual and case-based tests</td></tr>
+<tr><td>Mirroring quality</td><td>Representational fidelity; evidence coverage; temporal and contextual accuracy; uncertainty calibration; responsiveness to user correction</td><td>Compare model representations with user-validated accounts across time and contexts</td></tr><tr><td>Evidence fidelity</td><td>Provenance coverage; evidence support; correct inference labeling</td><td>Sampling of important memories and their source evidence</td></tr><tr><td>Temporal consistency</td><td>Stale-memory rate; update accuracy; conflict-resolution rate</td><td>Longitudinal cases and version comparisons</td></tr><tr><td>Scenario integrity</td><td>Cross-scenario leakage; scenario-rule conflicts</td><td>Isolation tests across clients, brands, and projects</td></tr><tr><td>Fusion integrity</td><td>Unauthorized inclusion; successful participant revocation; provenance retention</td><td>Multi-participant tasks and adversarial permission tests</td></tr><tr><td>PBIP effectiveness</td><td>Over-disclosure; coverage of task-essential information; policy-decision accuracy</td><td>Compare task requirements with delivered projections</td></tr><tr><td>Context utility</td><td>Relevant-context retrieval; irrelevant-context injection</td><td>User and domain-expert assessment</td></tr><tr><td>Downstream outcomes</td><td>Answer quality; task completion; rework and elapsed time</td><td>Compare tasks under different personal-context conditions</td></tr><tr><td>User agency and trust</td><td>Authorization comprehension; correction success; revocation comprehension; trust ratings</td><td>Usability tests, interviews, and scenario experiments</td></tr>
 </tbody></table></div>
-<h3>10.1 建議的實證研究設計</h3>
+<h3>Suggested empirical design</h3>
 <ol>
-<li><strong>基準資料集：</strong>在知情同意與適當去識別化下，建立帶有來源、時間、人物與範圍標記的評估資料。</li>
-<li><strong>對照條件：</strong>比較無個人脈絡、靜態個人摘要、一般長期記憶，以及具 Primary / Scenario、來源治理與 PBIP 的條件。</li>
-<li><strong>場景實驗：</strong>使用相似任務但不同品牌、客戶或角色的資料，測量 Scenario 隔離與錯誤引用。</li>
-<li><strong>Fusion 實驗：</strong>測試兩個以上 Twin 的授權組合、參與者退出、撤權後快取失效，以及多方來源歸屬是否維持。</li>
-<li><strong>縱向試點：</strong>建議進行多週或多月的追蹤；樣本數與週期須依研究功效、風險與倫理審查決定，而非預先假定固定規模足夠。</li>
-<li><strong>整體風險評估：</strong>若任務效益提高但錯誤歸因、未授權揭露或使用者失控風險亦增加，不能單獨以效益提升判定架構成功。</li>
+<li><strong>Benchmark dataset.</strong> With informed consent and appropriate de-identification, create evaluation data labeled for source, time, person, and scope.</li>
+<li><strong>Comparison conditions.</strong> Compare no personal context, a static personal summary, conventional long-term memory, and a condition with Primary/Scenario structure, provenance governance, and PBIP.</li>
+<li><strong>Scenario experiments.</strong> Use similar tasks with different brands, clients, or roles to measure isolation and mistaken cross-context retrieval.</li>
+<li><strong>Fusion experiments.</strong> Test authorized composition of two or more Twins, participant exit, cache invalidation after revocation, and preservation of multi-party provenance.</li>
+<li><strong>Longitudinal pilot.</strong> Conduct follow-up over weeks or months. Sample size and duration should be determined by statistical power, risk, and ethics review rather than assuming a fixed study is adequate.</li>
+<li><strong>Integrated risk assessment.</strong> An increase in task utility must not by itself establish success if mistaken attribution, unauthorized disclosure, or loss of user control also increases.</li>
 </ol>
 </section>
 <section id="hypotheses">
-<h2>可檢驗的研究命題</h2>
-<p>以下命題為待實驗驗證的假設，不是本文已證明的結論。</p>
+<h2>Testable research propositions</h2>
+<p>The following propositions are hypotheses for empirical testing, not findings established by this paper.</p>
 <div class="grid2">
-<div class="card"><p class="hypothesis-id"><strong>H1</strong> · CONTEXTUAL UTILITY</p><h3>具來源脈絡的個人智慧提高相關性</h3><p>與無個人脈絡或靜態摘要相比，具來源與時間資訊的個人智慧預期能提升特定任務的相關性。</p></div>
-<div class="card"><p class="hypothesis-id"><strong>H2</strong> · SCENARIO SPECIALIZATION</p><h3>場景專化兼顧全域一致與隔離</h3><p>Primary 與 Scenario 的分層結構預期比單一全域摘要更能維持跨場景一致性，同時降低資料混用。</p></div>
-<div class="card"><p class="hypothesis-id"><strong>H3</strong> · PROVENANCE</p><h3>來源與認知狀態降低錯誤歸因</h3><p>為記憶保存來源、作者、證據及認知狀態，預期可降低將他人觀點或模型推論誤認為使用者自述的比例。</p></div>
-<div class="card"><p class="hypothesis-id"><strong>H4</strong> · PBIP</p><h3>目的限定投影降低超額交付</h3><p>以任務、範圍、時間與授權共同判定交付，預期比整份個人檔案共享更能降低無關資訊揭露。</p></div>
-<div class="card"><p class="hypothesis-id"><strong>H5</strong> · USER AGENCY</p><h3>可檢視與更正機制改善控制感</h3><p>讓使用者理解資料來源、推論狀態與授權用途，預期能提高更正成功率及對系統控制能力的理解。</p></div>
-<div class="card"><p class="hypothesis-id"><strong>H6</strong> · FUSION INTEGRITY</p><h3>非破壞式 Fusion 維持參與者邊界</h3><p>保存授權組合設定而非融合後永久記憶，預期可降低退出、撤權及成員變更時的資料歸屬與同步問題。</p></div>
-<div class="card"><p class="hypothesis-id"><strong>H7</strong> · LONGITUDINAL LEARNING</p><h3>可修正更新優於靜態 Persona</h3><p>具有時間有效性、來源追蹤及使用者修正的模型，預期更能反映使用者目標、角色與偏好的變化。</p></div>
-<div class="card"><p class="hypothesis-id"><strong>H8</strong> · DOWNSTREAM ROLE SEPARATION</p><h3>分離理解、分析與執行降低意圖混淆</h3><p>在共享授權脈絡的前提下，明確區分個人智慧維護、分析驗證與任務執行，預期可降低意圖路由錯誤與未預期操作。</p></div>
+<div class="card"><p class="hypothesis-id"><strong>H1</strong> · Contextual utility</p><h3>Provenance-aware intelligence improves relevance</h3><p>Compared with no personal context or a static summary, personal intelligence with source and time information is expected to improve relevance for selected tasks.</p></div>
+<div class="card"><p class="hypothesis-id"><strong>H2</strong> · Scenario specialization</p><h3>Specialization balances global coherence and isolation</h3><p>A Primary/Scenario structure is expected to preserve cross-context coherence while reducing context mixing compared with a single global summary.</p></div>
+<div class="card"><p class="hypothesis-id"><strong>H3</strong> · Provenance</p><h3>Source and epistemic labels reduce mistaken attribution</h3><p>Recording source, author, evidence, and epistemic status is expected to reduce the rate at which others' views or model inferences are misrepresented as user statements.</p></div>
+<div class="card"><p class="hypothesis-id"><strong>H4</strong> · PBIP</p><h3>Purpose-bound projection reduces over-disclosure</h3><p>Joint decisions based on task, scope, time, and authorization are expected to disclose less irrelevant information than sharing an entire personal profile.</p></div>
+<div class="card"><p class="hypothesis-id"><strong>H5</strong> · User agency</p><h3>Inspection and correction improve perceived control</h3><p>Helping users understand sources, inference status, and authorized purposes is expected to improve correction success and comprehension of system control.</p></div>
+<div class="card"><p class="hypothesis-id"><strong>H6</strong> · Fusion integrity</p><h3>Non-destructive Fusion preserves participant boundaries</h3><p>Saving composition settings instead of permanent merged memory is expected to reduce ownership and synchronization problems when participants leave or revoke access.</p></div>
+<div class="card"><p class="hypothesis-id"><strong>H7</strong> · Longitudinal learning</p><h3>Revisable updates outperform static personas</h3><p>A model with temporal validity, provenance, and user correction is expected to better reflect changes in goals, roles, and preferences.</p></div>
+<div class="card"><p class="hypothesis-id"><strong>H8</strong> · Downstream role separation</p><h3>Separating understanding, analysis, and execution reduces intent confusion</h3><p>With authorization context shared appropriately, separating personal-intelligence maintenance, analytical verification, and task execution is expected to reduce routing errors and unintended actions.</p></div>
 </div>
 </section>
 <section id="roadmap">
-<h2>後續研究議程</h2>
-<p>本文不提出十年產品路線圖。未來工作應由可檢驗問題與已知風險驅動，並依證據逐步擴展。</p>
-<h3>12.1 個人智慧表示的有效性</h3><p>需要研究四個語義領域是否足夠穩定、是否容易被使用者理解，以及在不同文化、職業與生活情境中是否需要調整子類別或表示方式。同時應評估智慧映照的品質，包括表徵忠實度、證據可追溯性、時間準確性、情境適切性、不確定性校準，以及對使用者更正的回應能力。各項面向仍須建立明確的操作定義並接受實證檢驗。</p>
-<h3>12.2 長期學習與記憶更新</h3><p>需要比較訪談、文件、活動觀察與使用者反饋的證據品質，研究如何避免過度推論、記憶漂移、重複與錯誤更新，並評估使用者確認在不同記憶類型中的必要程度。</p>
-<h3>12.3 Scenario 隔離與多 Twin Fusion</h3><p>需要形式化場景邊界、衝突處理與授權傳遞，並比較動態視圖、短期快取與受控物化等實作策略。Fusion 尤其需要研究成員退出、撤權、資料刪除及衍生輸出的生命週期。</p>
-<h3>12.4 PBIP 與既有存取控制的互通</h3><p>需要把 PBIP 與 ABAC、用途限制、資料最小化、政策執行點及稽核框架進行具體映射，並測量授權判定的可靠性、延遲、可理解性與可驗證性。</p>
-<h3>12.5 使用者自主性與社會影響</h3><p>需研究使用者是否能理解 Twin 對自己的描述、是否能修正錯誤推論、如何處理第三方資料，以及長期依賴個人智慧系統可能造成的自主性、偏見與權力集中問題。</p>
+<h2>Research agenda</h2>
+<p>This paper does not propose a ten-year product roadmap. Future work should be driven by testable questions and known risks, with scope expanded only as evidence warrants.</p>
+<h3>Validity of the personal-intelligence representation</h3><p>Research should test whether the four semantic domains are sufficiently stable and understandable to users, and whether subcategories or representations need adjustment across cultures, professions, and life contexts. It should also evaluate the quality of personal-intelligence mirroring through representational fidelity, evidence traceability, temporal accuracy, contextual appropriateness, uncertainty calibration, and responsiveness to user correction. Each dimension requires an operational definition and empirical testing.</p>
+<h3>Longitudinal learning and memory revision</h3><p>Research should compare the evidential quality of interviews, documents, observed activity, and user feedback. It should examine how to prevent over-inference, memory drift, duplication, and erroneous updates, and when user confirmation is necessary for different memory types.</p>
+<h3>Scenario isolation and multi-Twin Fusion</h3><p>Scenario boundaries, conflict handling, and authorization propagation require formalization. Dynamic views, short-lived caches, and controlled materialization should be compared. Fusion particularly requires study of participant exit, revocation, deletion, and the lifecycle of derived outputs.</p>
+<h3>PBIP interoperability with existing access control</h3><p>PBIP should be mapped concretely to ABAC, purpose limitation, data minimization, policy-enforcement points, and audit frameworks. The reliability, latency, understandability, and verifiability of policy decisions should be measured.</p>
+<h3>User agency and social impact</h3><p>Research should examine whether people understand how a Twin represents them, can correct mistaken inferences, and can govern third-party data. It should also investigate risks to autonomy, bias, and concentration of power that may result from long-term dependence on personal-intelligence systems.</p>
 </section>
 <section id="limits">
-<h2>限制、風險與尚待回答的問題</h2>
+<h2>Limitations, risks, and open questions</h2>
 <ol>
-<li><strong>概念模型不等於科學分類：</strong>四個領域是架構性語義工具，尚未經心理測量或跨文化研究驗證。</li>
-<li><strong>個人智慧無法完整資料化：</strong>人的主觀經驗、身體狀態、無意識歷程與社會處境不可能由有限資料完整表示。</li>
-<li><strong>推論可能產生偏差：</strong>行為可能反映工具預設、外在限制或他人要求，未必代表使用者穩定偏好。</li>
-<li><strong>證據品質不均：</strong>文件、敘述、觀察與模型推論具有不同可靠度，單一信心分數無法解決所有不確定性。</li>
-<li><strong>跨場景風險：</strong>共享個人模型可能使客戶、品牌、家庭或專業資料被錯誤引用，需持續進行隔離測試。</li>
-<li><strong>Fusion 撤權限制：</strong>系統可停止未來存取並處置受控副本，但不能保證召回已被閱讀、處理或包含於既有輸出的資訊。</li>
-<li><strong>PBIP 的新穎性尚未確立：</strong>其組成原則與既有用途限制、最小化及 ABAC 有交集；必須透過更完整比較與實作測試，才能判斷是否具有實質增量。</li>
-<li><strong>法律與倫理適用性：</strong>個人智慧、第三方資料與組織使用情境可能涉及不同司法管轄區的資料保護與勞動規範；本文不是法律意見。</li>
-<li><strong>本文尚未提供實證結果：</strong>所有命題均待實作、使用者研究、安全測試及可重現評估支持。</li>
+<li><strong>A conceptual model is not a scientific taxonomy.</strong> The four domains are architectural categories and have not been validated through psychometric or cross-cultural studies.</li>
+<li><strong>Personal intelligence cannot be fully digitized.</strong> Subjective experience, bodily states, unconscious processes, and social circumstances cannot be completely represented by finite data.</li>
+<li><strong>Inference can be biased.</strong> Behavior may reflect tool defaults, external constraints, or another person's requirements rather than a stable user preference.</li>
+<li><strong>Evidence quality varies.</strong> Documents, narratives, observations, and model inferences have different reliability. A single confidence score cannot resolve every form of uncertainty.</li>
+<li><strong>Cross-context risk remains.</strong> A shared personal model may cause client, brand, family, or professional information to be retrieved in the wrong context. Isolation requires continuous testing.</li>
+<li><strong>Fusion revocation has limits.</strong> A system can stop future access and manage controlled copies, but cannot guarantee recall of information already read, processed, or embedded in existing outputs.</li>
+<li><strong>PBIP's novelty is not established.</strong> Its constituent principles overlap with purpose limitation, minimization, and ABAC. Further comparison and implementation tests are needed to establish whether it provides material incremental value.</li>
+<li><strong>Legal and ethical applicability varies.</strong> Personal intelligence, third-party data, and organizational use may engage different data-protection and employment rules across jurisdictions. This paper is not legal advice.</li>
+<li><strong>No empirical results are reported.</strong> All propositions require implementation, user research, security testing, and reproducible evaluation.</li>
 </ol>
 </section>
 <section id="conclusion">
-<h2>結論：建立可維護、可專化、可組合且受治理的個人智慧</h2>
-<p class="lead">個人化 AI 的長期價值不只在於記得更多，而在於能夠正確區分資訊來源、時間與情境，並尊重每位資料主體對自身智慧的控制權。</p>
-<p>本文提出 Contact Twin Personal Intelligence Framework，將個人智慧表示為具來源、證據、時間與範圍資訊，並由使用者持續治理的模型。四個基礎領域提供穩定的語義組織方式；Primary Twin 維護一個人的全域理解；Scenario Twin 在明確範圍內進行場景專化。</p>
-<p>Fusion 則解決不同問題：它在指定任務中組合多個 Twin 各自授權的智慧，但不合併永久身份、不建立融合後的權威記憶層。可重用的 Fusion 應保存組合設定，而非複製完整個人智慧。PBIP 負責判定哪些智慧可以交付給 Fusion 或其他下游應用，並將目的、主體、範圍、時間與授權納入交付契約。</p>
-<p>這些架構決策並不取代既有記憶、使用者建模、隱私或存取控制研究。它們形成一組需要透過文獻比較、工程實作、治理測試與縱向研究加以檢驗的設計主張。Contact Twin 的可行性最終取決於它是否能在提升個人化效益的同時，維持來源可信度、使用者自主性、多方資料邊界與可執行的撤權機制。</p>
+<h2>Conclusion: A maintainable, specialized, composable, and governed model</h2>
+<p class="lead">The long-term value of personalization lies not simply in remembering more, but in distinguishing sources, time, and context correctly while respecting each data subject's control over their information.</p>
+<p>This paper has proposed the Contact Twin Personal Intelligence Framework: a user-governed model that records provenance, evidence, temporal validity, and scope. Four semantic domains provide an organizing structure. The Primary Twin maintains one person's global model, while Scenario Twins specialize relevant intelligence within defined contexts.</p>
+<p>Fusion addresses a different problem. It composes separately authorized intelligence from multiple Twins for a specified task without merging permanent identities or creating an authoritative merged-memory layer. A reusable Fusion should retain composition settings rather than duplicate complete personal-intelligence stores. PBIP determines what intelligence may be delivered to a Fusion or another downstream application and places purpose, subject, scope, time, and authorization within the delivery contract.</p>
+<p>These architectural decisions do not replace existing work on memory, user modeling, privacy, or access control. They form a set of design propositions that must be examined through literature comparison, engineering implementation, governance testing, and longitudinal research. The framework's feasibility ultimately depends on whether it can improve personalization while maintaining provenance quality, user agency, multi-party boundaries, and enforceable limits on future access.</p>
 </section>
 <section id="references">
-<h2>參考文獻</h2>
-<p class="small">本參考文獻包含同儕審查研究、技術標準、機構研究報告及工作論文。[14] 為機構研究報告，[13] 為工作論文；兩者均未被標示為同儕審查期刊論文。</p>
+<h2>References</h2>
+<p class="small">The bibliography combines peer-reviewed research, a technical standard, an institutional research report, and a working paper. References [14] and [13] are explicitly labeled by publication type and are not presented as peer-reviewed journal articles.</p>
 <ol class="ref-list">
 <li>Conway, M. A., &amp; Pleydell-Pearce, C. W. (2000). The construction of autobiographical memories in the self-memory system. <em>Psychological Review, 107</em>(2), 261–288. <a href="https://doi.org/10.1037/0033-295X.107.2.261" rel="noopener" target="_blank">https://doi.org/10.1037/0033-295X.107.2.261</a>.</li>
 <li>Kobsa, A. (2001). Generic user modeling systems. <em>User Modeling and User-Adapted Interaction, 11</em>(1–2), 49–63. <a href="https://doi.org/10.1023/A:1011187500863" rel="noopener" target="_blank">https://doi.org/10.1023/A:1011187500863</a>.</li>
-<li>Brusilovsky, P., &amp; Millán, E. (2007). User models for adaptive hypermedia and adaptive educational systems. 收錄於 P. Brusilovsky, A. Kobsa, &amp; W. Nejdl (編), <em>The Adaptive Web: Methods and Strategies of Web Personalization</em> (頁 3–53). Springer. <a href="https://doi.org/10.1007/978-3-540-72079-9_1" rel="noopener" target="_blank">https://doi.org/10.1007/978-3-540-72079-9_1</a>.</li>
-<li>Li, I., Dey, A. K., &amp; Forlizzi, J. (2010). A stage-based model of personal informatics systems. 收錄於 <em>Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (CHI ’10)</em> (頁 557–566). ACM. <a href="https://doi.org/10.1145/1753326.1753409" rel="noopener" target="_blank">https://doi.org/10.1145/1753326.1753409</a>.</li>
-<li>Park, J. S., O’Brien, J. C., Cai, C. J., Morris, M. R., Liang, P., &amp; Bernstein, M. S. (2023). Generative Agents: Interactive simulacra of human behavior. 收錄於 <em>Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology (UIST ’23)</em>, Article 2, 1–22. ACM. <a href="https://doi.org/10.1145/3586183.3606763" rel="noopener" target="_blank">https://doi.org/10.1145/3586183.3606763</a>.</li>
-<li>Shinn, N., Cassano, F., Gopinath, A., Narasimhan, K., &amp; Yao, S. (2023). Reflexion: Language agents with verbal reinforcement learning. 收錄於 <em>Advances in Neural Information Processing Systems, 36</em>, 8634–8652. <a href="https://doi.org/10.52202/075280-0377" rel="noopener" target="_blank">https://doi.org/10.52202/075280-0377</a>.</li>
+<li>Brusilovsky, P., &amp; Millán, E. (2007). User models for adaptive hypermedia and adaptive educational systems. In P. Brusilovsky, A. Kobsa, &amp; W. Nejdl (Eds.), <em>The Adaptive Web: Methods and Strategies of Web Personalization</em> (pp. 3–53). Springer. <a href="https://doi.org/10.1007/978-3-540-72079-9_1" rel="noopener" target="_blank">https://doi.org/10.1007/978-3-540-72079-9_1</a>.</li>
+<li>Li, I., Dey, A. K., &amp; Forlizzi, J. (2010). A stage-based model of personal informatics systems. In <em>Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (CHI ’10)</em> (pp. 557–566). ACM. <a href="https://doi.org/10.1145/1753326.1753409" rel="noopener" target="_blank">https://doi.org/10.1145/1753326.1753409</a>.</li>
+<li>Park, J. S., O’Brien, J. C., Cai, C. J., Morris, M. R., Liang, P., &amp; Bernstein, M. S. (2023). Generative Agents: Interactive simulacra of human behavior. In <em>Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology (UIST ’23)</em>, Article 2, 1–22. ACM. <a href="https://doi.org/10.1145/3586183.3606763" rel="noopener" target="_blank">https://doi.org/10.1145/3586183.3606763</a>.</li>
+<li>Shinn, N., Cassano, F., Gopinath, A., Narasimhan, K., &amp; Yao, S. (2023). Reflexion: Language agents with verbal reinforcement learning. In <em>Advances in Neural Information Processing Systems, 36</em>, 8634–8652. <a href="https://doi.org/10.52202/075280-0377" rel="noopener" target="_blank">https://doi.org/10.52202/075280-0377</a>.</li>
 <li>Packer, C., Wooders, S., Lin, K., Fang, V., Patil, S. G., Stoica, I., &amp; Gonzalez, J. E. (2023). <em>MemGPT: Towards LLMs as operating systems</em>. arXiv:2310.08560. <a href="https://doi.org/10.48550/arXiv.2310.08560" rel="noopener" target="_blank">https://doi.org/10.48550/arXiv.2310.08560</a>.</li>
 <li>Zhang, Z., Dai, Q., Bo, X., Ma, C., Li, R., Chen, X., Zhu, J., Dong, Z., &amp; Wen, J.-R. (2025). A survey on the memory mechanism of large language model-based agents. <em>ACM Transactions on Information Systems, 43</em>(6), Article 155, 1–47. <a href="https://doi.org/10.1145/3748302" rel="noopener" target="_blank">https://doi.org/10.1145/3748302</a>.</li>
 <li>Stone, P., &amp; Veloso, M. (2000). Multiagent systems: A survey from a machine learning perspective. <em>Autonomous Robots, 8</em>(3), 345–383. <a href="https://doi.org/10.1023/A:1008942012299" rel="noopener" target="_blank">https://doi.org/10.1023/A:1008942012299</a>.</li>
 <li>Nissenbaum, H. (2004). Privacy as contextual integrity. <em>Washington Law Review, 79</em>(1), 119–158. <a href="https://digitalcommons.law.uw.edu/wlr/vol79/iss1/10/" rel="noopener" target="_blank">https://digitalcommons.law.uw.edu/wlr/vol79/iss1/10/</a>.</li>
 <li>Hu, V. C., Ferraiolo, D., Kuhn, R., Schnitzer, A., Sandlin, K., Miller, R., &amp; Scarfone, K. (2019). <em>Guide to Attribute Based Access Control (ABAC): Definition and considerations</em> (NIST Special Publication 800-162, updated February 25, 2019). National Institute of Standards and Technology. <a href="https://doi.org/10.6028/NIST.SP.800-162" rel="noopener" target="_blank">https://doi.org/10.6028/NIST.SP.800-162</a>.</li>
-<li>Amershi, S., Weld, D., Vorvoreanu, M., Fourney, A., Nushi, B., Collisson, P., Suh, J., Iqbal, S., Bennett, P. N., Inkpen, K., Teevan, J., Kikin-Gil, R., &amp; Horvitz, E. (2019). Guidelines for human-AI interaction. 收錄於 <em>Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems</em>, Paper 3, 1–13. ACM. <a href="https://doi.org/10.1145/3290605.3300233" rel="noopener" target="_blank">https://doi.org/10.1145/3290605.3300233</a>.</li>
-<li>Shah, A., South, T., Evans, T., Kirk, H. R., Pei, J., Trask, A., Weyl, E. G., &amp; Bakker, M. (2025, December 18). <em>Robust AI personalization controls: The Human Context Protocol</em>. Working paper. Stanford Digital Economy Lab. <a href="https://digitaleconomy.stanford.edu/publication/robust-ai-personalization-controls-the-human-context-protocol/" rel="noopener" target="_blank">出版紀錄</a>.</li><li>Stanford Digital Economy Lab. (2026, March 16). <em>The future of personal AI: Portable and persistent personal memory through a unified human context protocol</em>. Research report. <a href="https://digitaleconomy.stanford.edu/publication/the-future-of-personal-ai-portable-and-persistent-personal-memory-through-a-unified-human-context-protocol/" rel="noopener" target="_blank">出版紀錄</a>.</li></ol>
+<li>Amershi, S., Weld, D., Vorvoreanu, M., Fourney, A., Nushi, B., Collisson, P., Suh, J., Iqbal, S., Bennett, P. N., Inkpen, K., Teevan, J., Kikin-Gil, R., &amp; Horvitz, E. (2019). Guidelines for human-AI interaction. In <em>Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems</em>, Paper 3, 1–13. ACM. <a href="https://doi.org/10.1145/3290605.3300233" rel="noopener" target="_blank">https://doi.org/10.1145/3290605.3300233</a>.</li>
+<li>Shah, A., South, T., Evans, T., Kirk, H. R., Pei, J., Trask, A., Weyl, E. G., &amp; Bakker, M. (2025, December 18). <em>Robust AI personalization controls: The Human Context Protocol</em>. Working paper. Stanford Digital Economy Lab. <a href="https://digitaleconomy.stanford.edu/publication/robust-ai-personalization-controls-the-human-context-protocol/" rel="noopener" target="_blank">Publication record</a>.</li><li>Stanford Digital Economy Lab. (2026, March 16). <em>The future of personal AI: Portable and persistent personal memory through a unified human context protocol</em>. Research report. <a href="https://digitaleconomy.stanford.edu/publication/the-future-of-personal-ai-portable-and-persistent-personal-memory-through-a-unified-human-context-protocol/" rel="noopener" target="_blank">Publication record</a>.</li></ol>
 </section>
 
-<div class="footer"><span>Contact Twin 研究論文 · Version 1.5</span><span>Conceptual proposal · Not an empirical validation／概念提案，非實證驗證</span></div>
+<div class="footer"><span>Contact Twin Research Paper · Version 1.5</span><span>Conceptual proposal · Not an empirical validation</span></div>
 </div>
 </article></main>
 </div>
